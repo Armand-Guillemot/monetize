@@ -1,0 +1,48 @@
+.product-card{
+  height:500px;
+  width:calc(260px + 2vw);
+  background-color: white;
+ border-radius:12px;
+ padding: 0;
+  box-shadow:$outset;
+
+
+  .header {
+    height:15%;
+    border-radius:  12px 12px 0 0;
+    .header-brand{
+
+    }
+  }
+  .body {
+    height:75%;
+    padding:10px;
+    flex-direction:column;
+    gap: 15px;
+    .title{
+
+    }
+    .description {
+      text-align:center;
+    }
+
+  }
+  .footer {
+      height: calc(10% - 10px);
+      border-radius: 0 0 12px 12px;
+      h5 {
+        font-size:12px;
+      }
+      .dot {
+        margin-top: 1px;
+        height:15px;
+        width:15px;
+        border-radius:7.5px;
+        background-color:$primary-color;
+        box-shadow:  $inset;
+      }
+      .status {
+        gap: 5px;
+      }
+  }
+}

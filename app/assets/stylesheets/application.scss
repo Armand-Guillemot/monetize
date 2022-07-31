@@ -1,0 +1,124 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+@import "sections/index";
+
+
+
+
+
+
+
+
+
+
+
+html {
+    font-size: calc(11.5px + 0.3vw);
+    transition: all .2s ease-in;
+}
+
+a {
+  &:link { text-decoration: none; }
+  &:visited { text-decoration: none; }
+  &:hover { text-decoration: none; color: white; }
+  &:active { text-decoration: none; }
+}
+
+
+h1, h2, h3, h4, h5, p {
+  margin-bottom: 5px;
+}
+
+
+
+h1 {
+  z-index:0;
+  text-align:center;
+  display: inline-block;
+  position:relative;
+
+  text-align: center;
+
+  color: $dark;
+  font-family: $headers-font;
+  text-shadow: 2px 3px 5px rgba(33, 33, 33, 0.25);
+  line-height: 1.2;
+  font-weight: bold;
+  font-size: calc(10px + (0.390625vw * 12) );
+
+
+
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: calc(0.5vw + 10px);
+    width: 101%;
+    background-color: $primary-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 1.8vw);
+    z-index: -1;
+    box-shadow:  $inset-reverse;
+    border-radius:5px;
+    opacity: 0.9
+  }
+}
+
+
+
+h2 {
+  color: $dark;
+  font-family: $headers-font;
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align:center;
+  &.light {
+    color:white;
+  }
+}
+
+h3 {
+  color: $primary-color;
+  font-family: $headers-font;
+  font-size: 1.1rem;
+  text-align:center;
+  &.light {
+    color:white;
+  }
+}
+
+h4 {
+  color: $text-color;
+  font-family: $headers-font;
+  font-size: 1rem;
+  text-align:center;
+  &.light {
+    color:white;
+  }
+
+}
+
+h5 {
+  color: $dark;
+  font-weight: bold;
+  font-family: $headers-font;
+  font-size: 1rem;
+}
+
+p {
+  color: $text-color;
+  font-family: $headers-font;
+  font-size: 1rem;
+}
+

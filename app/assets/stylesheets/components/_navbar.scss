@@ -1,0 +1,150 @@
+
+.nav {
+  height: 70px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 10000;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  .nav-cta p {
+    color: white!important;
+
+  }
+}
+
+.nav > .nav-header {
+
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: $dark;
+  padding: 10px 10px 10px 10px;
+  font-weight:bold;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin-right:35px;
+}
+
+.nav > .nav-links > a {
+  font-family: $headers-font;
+  display: inline-block;
+  text-decoration: none;
+  color: $dark;
+  p{
+    margin: 0;
+    font-size: 15px;
+  }
+  .cta{
+    padding:9px 15px;
+    font-size:14px;
+    margin-left:20px;
+  }
+}
+
+.nav > .nav-links > a:hover {
+
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:850px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid $dark;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: white;
+    height: 0px;
+    transition: all .35s ease-out;
+    overflow-y: hidden;
+    top: 70px;
+    left: 0px;
+        display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    .nav-cta {
+      margin: 0 15vw!important;
+
+    }
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+    padding:10px;
+
+    p{
+    color: $dark;
+    text-align:center;
+    font-size: 17px;
+    }
+    .cta{
+
+    }
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+    p {
+      color:white;
+    }
+    .nav-cta {
+      color: white!important;
+      background-color: white!important;
+      box-shadow:none!important;
+
+    }
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    touch-action: none;
+    padding-top: 10vh;
+    p {
+      color:$dark;
+    }
+    .nav-cta {
+      color: white!important;
+      background-color: $primary-color!important;
+
+    }
+
+  }
+}

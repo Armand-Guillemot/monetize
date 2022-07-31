@@ -1,0 +1,30 @@
+<div class="product-card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+  <div class="header flex-center">
+    <div class="header-brand"></div>
+  </div>
+  <div class="section-spacer card-spacer"></div>
+  <div class="body flex-center">
+    <h5 class="title">
+      <%= title %>
+    </h5>
+    <p class="description">`
+      <%= description %>
+    </p>
+    <a href="#" class="cta"><%= cta %></a>
+  </div>
+  <div class="section-spacer card-spacer"></div>
+  <div class="footer flex-center">
+    <div class="status flex-center">
+      <% if status == 1 %>
+        <div class="dot" style="background-color:orange;"></div>
+        <h5 class="m-0">Victime de son succès</h5>
+      <% elsif status == 2 %>
+        <div class="dot" style="background-color:green;"></div>
+        <h5 class="m-0">Disponible</h5>
+      <% elsif status == 3 %>
+        <div class="dot" style=""></div>
+        <h5 class="m-0">Bientôt disponible</h5>
+      <% end %>
+    </div>
+  </div>
+</div>

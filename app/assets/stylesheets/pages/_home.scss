@@ -1,0 +1,70 @@
+// Specific CSS for your home-page
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-primary-color {
+  color: $primary-color
+}
+
+.section-spacer {
+  display:block;
+  height:50px;
+  box-shadow: $inset;
+  width:100%;
+  background: $primary-color;
+  .primary-section-spacer {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  }
+  &.card-spacer {
+    height:5px!important;
+  }
+
+}
+
+
+.spacer {
+  display:block;
+  height:50px;
+}
+
+.cta {
+  text-align:center;
+  padding: 12px 17px;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 50px;
+  box-shadow:  $inset;
+  &.light {
+    box-shadow:  $outset!important;
+    background-color: white!important;
+    color: $primary-color!important;
+  }
+}
+
+
+.section {
+  padding: 70px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-1{
+  padding-top:140px;
+  z-index:-2;
+}
+
+
+.section-1, .section-2 {
+  min-height: 100vh;
+  background:white;
+}
+
+.section-4 {
+  background: $primary-color;
+
+}
