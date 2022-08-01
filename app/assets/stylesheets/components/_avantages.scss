@@ -5,7 +5,7 @@
     align-items:center;
     justify-content: space-around;
     flex-direction: column;
-    gap: 100px;
+    gap: 50px;
   }
 
   .square {
@@ -15,6 +15,14 @@
     box-shadow: $inset;
     background-color: $primary-color;
     position: relative;
+    img {
+      height:50px;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
 
     .advantage {
       position: absolute;
@@ -44,10 +52,8 @@
   .left-image-container, .right-image-container {
     height: 100%;
     display: flex;
-    .image {
-      height: 200px;
+    img {
       width: 200px;
-      background: $primary-color;
     }
   }
 

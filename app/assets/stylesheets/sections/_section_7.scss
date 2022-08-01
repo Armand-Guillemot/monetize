@@ -1,0 +1,44 @@
+.section-7-container {
+  gap: 20px;
+}
+
+.last-cta-text {
+  width:40%;
+  h3 {
+    text-align:right;
+  }
+  h2 {
+    text-align:right;
+  }
+  a {
+    float:right;
+  }
+}
+.last-cta-image {
+  width:30%;
+  img {
+    width:100%;
+  }
+}
+
+@media (max-width:700px) {
+  .last-cta-text {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    h3 {
+      text-align:center;
+    }
+    h2 {
+      text-align:center;
+    }
+    a {
+    }
+  }
+  .last-cta-image {
+    width:0%;
+    display:none;
+  }
+}

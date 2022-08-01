@@ -1,0 +1,23 @@
+:root {
+  --star-size: 20px;
+  --star-color: $primary-color;
+  --star-background: $primary-color;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: Times; // make sure ★ appears correctly
+  line-height: 1;
+
+  &::before {
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.2);
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, $primary-color var(--percent), white var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

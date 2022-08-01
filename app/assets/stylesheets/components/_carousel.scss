@@ -1,0 +1,44 @@
+
+
+.carousel-container {
+  margin:0 5vw;
+}
+
+.owl-carousel {
+
+  .owl-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: calc(30px + 2vw);;
+  }
+
+  .owl-stage-outer{
+  }
+  .owl-prev, .owl-next {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primary-color!important;
+    border-radius: 50%;
+    box-shadow: $inset;
+
+    span {
+    font-size: 28px;
+    color: white;
+    margin: 0;
+    height: 45px;
+    }
+  }
+
+
+}
+
+.owl-carousel.owl-drag .owl-item {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}

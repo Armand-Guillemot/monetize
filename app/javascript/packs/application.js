@@ -15,3 +15,28 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
+
+import JQuery from 'jquery';
+window.$ = window.JQuery = JQuery;
+$(document).ready(function(){
+$('.owl-carousel').owlCarousel({
+  dots: false,
+  nav: true,
+  autoplay: true,
+  autoplayHoverPause: true,
+  loop: true,
+  responsive:{
+    0:{
+      items:1
+     },
+     850:{
+      items:2
+     },
+    1300:{
+     items:3
+     }
+   }
+ })
+});

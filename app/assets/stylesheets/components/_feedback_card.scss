@@ -1,0 +1,43 @@
+$square: calc(300px + 2vw);
+.feedback-card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin:10px;
+  background-color: #E6EAF3;
+  width: $square;
+  // height:$square;
+  padding: 20px;
+  border-radius: 12px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  .feedback-card-header h5 {
+    margin-bottom: 15px;
+  }
+  hr {
+    width: 100%;
+  }
+
+.footer-container {
+  width: 100%;
+  .footer-feedback-card {
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:15px;
+    width: 100%;
+
+    .square {
+      background-color: $primary-color;
+      border-radius:5px;
+      box-shadow: $inset;
+      height: 60px;
+      width:60px;
+    }
+
+    .footer-feedback-card-text {
+
+    }
+  }
+}
+}

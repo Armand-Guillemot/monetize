@@ -1,6 +1,7 @@
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
+@import "config/vars";
 @import "config/bootstrap_variables";
 
 // External libraries
@@ -51,7 +52,7 @@ h1 {
 
   color: $dark;
   font-family: $headers-font;
-  text-shadow: 2px 3px 5px rgba(33, 33, 33, 0.25);
+  text-shadow: 2px 3px 5px rgba(33, 33, 33, 0.1);
   line-height: 1.2;
   font-weight: bold;
   font-size: calc(10px + (0.390625vw * 12) );
@@ -69,7 +70,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, 1.8vw);
     z-index: -1;
-    box-shadow:  $inset-reverse;
+    box-shadow:  $inset;
     border-radius:5px;
     opacity: 0.9
   }
