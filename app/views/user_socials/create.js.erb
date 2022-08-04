@@ -1,0 +1,9 @@
+
+
+var item = $("<%= j render(:partial => 'components/user_social', locals: { user_social: @user_social }) %>").hide().fadeIn(200);
+
+$('#social').append(item)
+$('#user_social_pseudo')[0].value = "";
+$('#user_social_social_id')[0].selectedIndex = -1;
+
+

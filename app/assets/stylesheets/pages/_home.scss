@@ -38,6 +38,14 @@
   color: white;
   border-radius: 50px;
   box-shadow:  $inset;
+  border: 0;
+  &:hover {
+  background-color: $primary-color;
+  color: white;
+  }
+  &.cta-sm {
+    padding: 7px 12px;
+  }
   &.light {
     box-shadow:  $outset!important;
     background-color: white!important;
@@ -56,7 +64,6 @@ $section-padding: 70px;
 }
 
 .section-1{
-  padding-top: $section-padding + $navbar-height;
   z-index:-2;
 }
 

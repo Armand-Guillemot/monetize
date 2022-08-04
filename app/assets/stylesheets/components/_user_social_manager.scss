@@ -1,0 +1,49 @@
+.user-social-manager-container {
+  background-color:white;
+  // box-shadow:$outset;
+  // border-radius:12px;
+  .social-form {
+    background-color: white;
+    color: white;
+    padding:15px;
+    .field {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      button {
+        background: none;
+        border:none;
+
+
+        i {
+          box-shadow: $outset;
+          font-size: 3rem;
+          color:$primary-color;
+          border-radius:50%;
+
+        }
+      }
+      .add-social {
+        color:red;
+      }
+      input, select {
+        background-color:white;
+        border:none;
+        box-shadow:$outset;
+      }
+    }
+  }
+}
+
+#social {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  gap: 20px;
+  flex-direction: column;
+  padding: 30px;
+  min-height: 300px;
+  min-width: 300px;
+}
+

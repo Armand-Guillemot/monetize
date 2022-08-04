@@ -1,30 +1,31 @@
 .footer.footer-container {
-  box-shadow: $inset;
+  box-shadow: $outset;
   padding:10px;
-  height: 50px;
-  background-color: $primary-color;
+  height: $footer-height;
+  background-color: white;
   p{
     margin: 0;
-    color:white;
+    color:$primary-color;
     font-size: 12px;
     a {
-      color:white!important;
+      color:$primary-color!important;
     }
   }
 }
 
 .footer.mobile-footer-container {
   display:none;
-  box-shadow: $inset;
+  box-shadow: $outset;
   padding:10px;
-  background-color: $primary-color;
+  background-color: white;
+  height: $footer-height;
   p{
     text-align:center;
     margin: 0;
-    color:white;
+    color:$primary-color;
     font-size: 12px;
     a {
-      color:white!important;
+      color:$primary-color!important;
     }
   }
 }

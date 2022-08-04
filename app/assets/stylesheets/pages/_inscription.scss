@@ -1,0 +1,38 @@
+.form-outer-container {
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  min-height: calc(100vh - #{$navbar-height} - #{$footer-height});
+
+
+  .form-container {
+    background-color:white;
+    border-radius: 12px;
+    box-shadow: $outset;
+    h5 {
+      margin:0;
+      padding:20px;
+      text-align:center;
+    }
+
+
+    .simple_form {
+      padding: calc(30px + 1vh) calc(25px + 1vw);
+      margin: 2vh 2vw;
+      label {
+        font-size: .95rem;
+      }
+      .cta {
+        width:100%;
+      }
+      .form-group {
+        margin: 10px 0;
+      }
+    }
+
+
+  }
+
+}

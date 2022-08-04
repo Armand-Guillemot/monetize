@@ -1,0 +1,11 @@
+<div id="social-<%= user_social.id %>" class="flex-center social-container">
+  <div class="social-image-container">
+    <img src="<%= user_social.social.logo %>" alt="">
+    <a confirm="Delete?" class="" data-message="Are you sure?" data-severity="danger" data-remote="true" rel="nofollow" data-method="delete" href="<%= user_social_path(user_social) %>">
+      <span class="flex-center h-100">
+        <i class="fas fa-times"></i>
+      </span>
+    </a>
+  </div>
+  <p><%= user_social.pseudo %></p>
+</div>

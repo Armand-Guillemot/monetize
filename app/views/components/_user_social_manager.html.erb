@@ -1,0 +1,23 @@
+<div class="user-social-manager-container">
+  <div class="flex-center">
+    <div class="social-form">
+      <%= simple_form_for UserSocial.new, remote: true do |f| %>
+        <div class="field">
+          <%= f.association :social, label_method: :title, value_method: :id, label: false, placeholder: "@zidane" %>
+          <%= f.input :pseudo, class: "form-control col-lg-8", placeholder: "@zidane", label: false %>
+          <%= f.input :user_id, input_html: {value: current_user.id }, as: :hidden %>
+          <%= button_tag type: 'submit', class: "add-social" do %>
+            <i class="fas fa-plus-circle"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="flex-center">
+    <div id="social">
+      <% UserSocial.where(user: current_user).each do |user_social| %>
+        <%= render "components/user_social", user_social: user_social %>
+      <% end %>
+    </div>
+  </div>
+</div>

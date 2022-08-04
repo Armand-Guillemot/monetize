@@ -1,0 +1,15 @@
+<% if notice.present? %>
+  <div class="notice">
+    <img src="/notification.png" alt="">
+    <p><%= notice %></p>
+  </div>
+<% end %>
+<% if alert.present? %>
+  <div class="alert">
+    <img src="/caution.png" alt="">
+    <p><%= alert %></p>
+  </div>
+<% end %>
+<% if notice.present? || alert.present? %>
+  <%= javascript_pack_tag "alerts_notices" %>
+<% end %>

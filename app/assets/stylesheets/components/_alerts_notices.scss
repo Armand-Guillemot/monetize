@@ -1,0 +1,43 @@
+.notice, .alert {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:10px;
+  z-index: 10000000;
+  background-color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin: 0;
+  gap: 15px;
+  transform: translateY(150px);
+  animation: notification 10s ease .2s 1;
+
+  p{
+    text-align:left;
+    margin: 0;
+  }
+
+  img {
+    height:40px;
+  }
+}
+
+
+@keyframes notification {
+  0%   {transform: translateY(150px);}
+  10%  {transform: translateY(0);}
+  90%  {transform: translateY(0);}
+  100% {transform: translateY(150px);}
+}
+
+.notice {
+
+}
+
+.alert {
+
+}
