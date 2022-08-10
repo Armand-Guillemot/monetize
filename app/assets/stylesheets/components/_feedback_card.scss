@@ -2,7 +2,7 @@ $square: calc(300px + 2vw);
 .feedback-card {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin:10px;
-  background-color: #E6EAF3;
+  background: #E6EAF3;
   width: $square;
   // height:$square;
   padding: 20px;
@@ -28,7 +28,7 @@ $square: calc(300px + 2vw);
     width: 100%;
 
     .square {
-      background-color: $primary-color;
+      background: $primary-color;
       border-radius:5px;
       box-shadow: $inset;
       height: 60px;

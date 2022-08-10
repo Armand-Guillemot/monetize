@@ -1,9 +1,9 @@
 .user-social-manager-container {
-  background-color:white;
+  background:white;
   // box-shadow:$outset;
   // border-radius:12px;
   .social-form {
-    background-color: white;
+    background: white;
     color: white;
     padding:15px;
     .field {
@@ -33,7 +33,7 @@
         color:red;
       }
       input, select {
-        background-color:white;
+        background:white;
         border:none;
         box-shadow:$outset;
       }

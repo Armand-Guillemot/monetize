@@ -2,7 +2,7 @@
 .nav {
   height: $navbar-height;
   width: 100%;
-  background-color: white;
+  background: white;
   position: fixed;
   top:0;
   justify-content: space-between;
@@ -102,7 +102,7 @@
     position: absolute;
     display: block;
     width: 100%;
-    background-color: white;
+    background: white;
     height: 0px;
     transition: all .4s ease-out;
     overflow-y: hidden;
@@ -139,7 +139,7 @@
     }
     .nav-cta {
       color: white!important;
-      background-color: white!important;
+      background: white!important;
       box-shadow:none!important;
 
     }
@@ -155,7 +155,7 @@
     }
     .nav-cta {
       color: white!important;
-      background-color: $primary-color!important;
+      background: $primary-color!important;
 
     }
 

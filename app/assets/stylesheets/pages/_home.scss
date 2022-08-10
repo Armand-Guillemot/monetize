@@ -33,13 +33,13 @@
 .cta {
   text-align:center;
   padding: 12px 17px;
-  background-color: $primary-color;
+  background: $primary-color;
   color: white;
   border-radius: 50px;
   box-shadow:  $inset;
   border: 0;
   &:hover {
-  background-color: $primary-color;
+  background: $primary-color;
   color: white;
   }
   &.cta-sm {
@@ -47,7 +47,7 @@
   }
   &.light {
     box-shadow:  $outset!important;
-    background-color: white!important;
+    background: white!important;
     color: $primary-color!important;
   }
 }
@@ -59,7 +59,7 @@ $section-padding: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background: white;
 }
 
 .section-1{
