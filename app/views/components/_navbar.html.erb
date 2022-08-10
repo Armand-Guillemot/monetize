@@ -1,9 +1,9 @@
 <div class="nav">
   <input type="checkbox" id="nav-check">
   <div class="nav-header flex-center">
-    <div class="nav-title">
-      Monetize
-    </div>
+    <a href="/">
+      <img src="/logotext.png" alt="Logo">
+    </a>
   </div>
   <div class="nav-btn">
     <label for="nav-check">
@@ -36,8 +36,22 @@
           <a href="/#section-6" >
             <p class="norm">FAQ</p>
           </a>
-          <a href="/#section-7" >
-            <div class="cta nav-cta">Prendre un RDVs</div>
-          </a>
+          <% if current_user %>
+            <a href="/dashboard" >
+              <div class="cta nav-cta"><i style="margin-right: 5px;" class="fas fa-tachometer-alt"></i>Dashboard</div>
+            </a>
+            <a href="/sign_out" >
+              <i class="fas fa-sign-out-alt"></i>
+              <p class="norm">Déconnexion</p>
+            </a>
+          <% else %>
+            <a href="<%= @cta_url %>" >
+              <div class="cta nav-cta"><%= @cta_text %></div>
+            </a>
+            <a href="/connexion" >
+              <i class="fas fa-sign-in-alt mr-2"></i>
+              <p class="norm">Connexion</p>
+            </a>
+          <% end %>
         </div>
       </div>

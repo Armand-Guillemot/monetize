@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_02_005729) do
+ActiveRecord::Schema.define(version: 2022_08_09_155731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "logo"
+    t.string "description"
+    t.string "content"
+    t.string "rem"
+    t.string "marketing"
+    t.string "criterion"
+    t.integer "status"
+    t.boolean "bonus"
+    t.boolean "cpf"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "socials", force: :cascade do |t|
     t.string "logo"
@@ -45,6 +60,11 @@ ActiveRecord::Schema.define(version: 2022_08_02_005729) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "numero_de_telephone"
+    t.string "pseudo"
+    t.boolean "step_1"
+    t.boolean "step_2"
+    t.boolean "confirmed"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

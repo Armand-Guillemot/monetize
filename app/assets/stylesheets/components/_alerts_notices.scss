@@ -4,7 +4,7 @@
   bottom:0;
   left:0;
   width:100%;
-  padding:10px;
+  padding:5px;
   z-index: 10000000;
   background-color:white;
 
@@ -15,6 +15,10 @@
   gap: 15px;
   transform: translateY(150px);
   animation: notification 10s ease .2s 1;
+  --bs-alert-color: none;
+  --bs-alert-bg: none;
+  --bs-alert-border-color: none;
+  font-size: 12px;
 
   p{
     text-align:left;
@@ -34,10 +38,23 @@
   100% {transform: translateY(150px);}
 }
 
-.notice {
+.notice::before {
+  content: '';
+  background-image: url('/notification.png');
+  background-repeat: no-repeat;
+  background-size:100%;
+  height: 35px;/* height of the image */;
+  width:35px;
+  display: block;
 
 }
 
-.alert {
-
+.alert::before {
+  content: '';
+  background-image: url('/caution.png');
+  background-repeat: no-repeat;
+  background-size:100%;
+  height: 35px;/* height of the image */;
+  width:35px;
+  display: block;
 }

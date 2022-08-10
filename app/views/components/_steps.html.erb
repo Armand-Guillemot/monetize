@@ -1,0 +1,19 @@
+<% if step == 1 %>
+  <div class="steps-container">
+    <div class="step-item loading"></div>
+    <div class="step-item "><span></span></div>
+    <div class="step-item"></div>
+  </div>
+<% elsif step == 2 %>
+  <div class="steps-container">
+    <div class="step-item active"></div>
+    <div class="step-item loading"><span></span></div>
+    <div class="step-item"></div>
+  </div>
+<% else %>
+  <div class="steps-container">
+    <div class="step-item active"></div>
+    <div class="step-item active"><span></span></div>
+    <div class="step-item loading"></div>
+  </div>
+<% end %>

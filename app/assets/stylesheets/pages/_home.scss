@@ -11,14 +11,10 @@
 
 .section-spacer {
   display:block;
-  height:50px;
+  height:40px;
   box-shadow: $inset;
   width:100%;
   background: $primary-color;
-  .primary-section-spacer {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-  }
   &.card-spacer {
     height:5px!important;
   }
@@ -29,6 +25,9 @@
 .spacer {
   display:block;
   height:50px;
+  &.spacer-sm {
+    height:25px!important;
+  }
 }
 
 .cta {

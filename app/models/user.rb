@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :user_socials
   accepts_nested_attributes_for :user_socials
+  validates :numero_de_telephone, phone: {possible: true}
 end

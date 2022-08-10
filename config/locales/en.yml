@@ -194,11 +194,11 @@ en:
       required: doit exister
       taken: est déjà utilisé(e)
       too_long:
-        one: est trop long (pas plus d'un caractère)
-        other: est trop long (pas plus de %{count} caractères)
+        one: est trop long
+        other: est trop long
       too_short:
-        one: est trop court (au moins un caractère)
-        other: est trop court (au moins %{count} caractères)
+        one: est trop court
+        other: est trop court
       wrong_length:
         one: ne fait pas la bonne longueur (doit comporter un seul caractère)
         other: ne fait pas la bonne longueur (doit comporter %{count} caractères)

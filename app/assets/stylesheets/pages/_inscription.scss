@@ -6,29 +6,108 @@
   background-color: $primary-color;
   min-height: calc(100vh - #{$navbar-height} - #{$footer-height});
 
+  .invalid-feedback {
+    color:$primary-color!important;
+    position:absolute;
+    text-align:center;
+  }
+
+
+
 
   .form-container {
-    background-color:white;
+    background-color: white;
+    width: 100%;
     border-radius: 12px;
+    margin: 10px;
+    max-width: 360px;
     box-shadow: $outset;
-    h5 {
-      margin:0;
+    .form-header {
       padding:20px;
-      text-align:center;
+      h5 {
+
+        text-align:center;
+      }
     }
 
 
     .simple_form {
-      padding: calc(30px + 1vh) calc(25px + 1vw);
+      // padding: calc(20px + 1vh) calc(10px + 1vw);
       margin: 2vh 2vw;
+
+
+
+
+
+
+
+
+
       label {
-        font-size: .95rem;
+        font-size: .90rem;
       }
       .cta {
         width:100%;
       }
+      .upper-form-group{
+        position: relative;
+      }
       .form-group {
-        margin: 10px 0;
+        margin: 35px 0;
+        input {
+          // padding-left:40px;
+          // border-radius: 20px 0 0 20px;
+        }
+      }
+      .form-control {
+        box-shadow:$outset;
+        background:white;
+        border:none;
+        height: 45px;
+        font-size: 13px;
+        border-radius: 5px;
+        padding-left: 17%;
+
+
+        }
+      .upper-form-group {
+        width: 280px;
+        margin:0 auto;
+position:relative;
+        &::after {
+
+      font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  display: block;
+  width: 17%;
+  text-align: center;
+  height: 100%;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px 0 0 5px;
+  position:absolute;
+  background-color: transparent;
+  color:$primary-color;
+  border: none;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size:17px;
+        }
+
+
+        &.pseudo::after {content: "\f508";}
+        &.numero_de_telephone::after {content: "\f095";}
+        &.email::after {content: "\f0e0";}
+        &.password::after {content: "\f023";}
+
+
+
+
       }
     }
 

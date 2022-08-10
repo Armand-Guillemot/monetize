@@ -1,15 +1,39 @@
 
+.social-section {
+	min-height: calc(100vh - #{$navbar-height} - #{$footer-height});
+	padding:50px 10px!important;
+	align-items: flex-start!important;
+
+	.next-step {
+
+		opacity:0;
+		transition: opacity .3s linear .3s;
+		a{
+			pointer-events: none;
+		}
+	}
+	.next-step.enabled {
+
+		opacity:1;
+		a{
+			pointer-events: all;
+		}
+	}
+}
+
+
 .social-container{
-  gap:5px;
+  gap:7.5px;
   p{
 
   }
   .social-image-container{
     position: relative;
-    height:40px;
-    width: 40px;
+    height:35px;
+    width: 35px;
     box-shadow:$outset;
     border-radius:50%;
+    flex-shrink: 0;
     img {
       height:100%;
       width: 100%;

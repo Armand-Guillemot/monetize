@@ -1,0 +1,86 @@
+
+// Variables
+$inactive: #dfdfdf;
+$active1: $primary-color;
+$active2: rgba($primary-color, .6);
+$active3: rgba($primary-color, .3);
+$radius: 15px;
+$size: 5px;
+
+// Animations
+@keyframes dash {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+// Mixins
+@mixin dashAnimation($color, $zIndex, $timingFunction) {
+  animation: dash 1.618s infinite #{$timingFunction};
+  background-color: #{$color};
+  z-index: #{$zIndex};
+};
+
+// Steps component
+.steps-container {
+  display: flex;
+  height: $size;
+  width: 150px;
+  gap: 10px;
+}
+
+.step-item {
+  flex: 1 1 0;
+  width: 0;
+  background: $inactive;
+  border-radius: $radius;
+
+  &.active {
+    background: $active1;
+  }
+
+  &.loading {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+
+    &:before,
+    &:after,
+    span {
+      display: flex;
+      position: absolute;
+      transform: translateX(-100%);
+      height: 100%;
+      width: 100%;
+      border-radius: $radius;
+    }
+
+    span {
+      @include dashAnimation($active1, 2, 'cubic-bezier(0.4, 0, 1.0, 1.0)');
+
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        background-color: $active1;
+      }
+    }
+
+    &:before {
+      content: '';
+      @include dashAnimation($active2, 1, 'cubic-bezier(0.2, 0, 1.0, 1.0)');
+    }
+
+    &:after {
+      content: '';
+      @include dashAnimation($active3, 0, 'linear');
+    }
+  }
+}

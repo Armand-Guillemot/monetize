@@ -4,6 +4,5 @@ var item = $("<%= j render(:partial => 'components/user_social', locals: { user_
 
 $('#social').append(item)
 $('#user_social_pseudo')[0].value = "";
-$('#user_social_social_id')[0].selectedIndex = -1;
-
-
+$('#user_social_social_id')[0].selectedIndex = 0;
+$('.next-step')[0].classList.add("enabled");

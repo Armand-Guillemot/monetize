@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }, path_names: { sign_in: '/connexion', sign_up: '/inscription'}
+  devise_for :users, controllers: { registrations: 'users/registrations' }, path:"", path_names: { sign_in: '/connexion', sign_up: '/inscription'}
   root to: "pages#home"
   get '/cgu', to: "pages#cgu"
   get '/dashboard', to: "pages#dashboard"

@@ -1,26 +1,57 @@
 <div class="flex-center form-outer-container">
   <div class="form-container">
-    <h5>Étape 1 - Inscription</h5>
+    <div class="form-header">
+      <h5>Inscription Monetize</h5>
+      <div class="flex-center">
+        <%= render "components/steps", step: 1 %>
+      </div>
+    </div>
     <div class="section-spacer card-spacer"></div>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
-        <%= f.input :email,
+        <div class="upper-form-group pseudo">
+          <%= f.input :pseudo,
+          label: false,
+          placeholder: "Pseudo",
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
+                input_html: { class: "form-pseudo",autocomplete: "username" } %>
+        </div>
+        <div class="upper-form-group numero_de_telephone">
+          <%= f.input :numero_de_telephone,
+          label: false,
+          placeholder: "Numéro de téléphone",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
+                input_html: { class: "form-tel",autocomplete: "phone_number" }%>
+        </div>
+        <div class="upper-form-group email">
+          <%= f.input :email,
+          label: false,
+          placeholder: "Adresse email",
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { class: "form-email",autocomplete: "email" }%>
+        </div>
+        <div class="upper-form-group password">
+          <%= f.input :password,
+          label: false,
+          placeholder: "Mot de passe",
+                required: true,
+                input_html: { class: "form-pw",autocomplete: "new-password" } %>
+        </div>
+        <div class="upper-form-group password">
+          <%= f.input :password_confirmation,
+          label: false,
+          placeholder: "Confirmation du mot de passe",
+                required: true,
+                input_html: { class: ".form-pw",autocomplete: "new-password" } %>
+        </div>
       </div>
       <div class="spacer"></div>
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class:"cta cta-sm" %>
+        <%= f.button :submit, "S'inscrire", class:"cta cta-sm" %>
       </div>
+      <p style="font-size: 12px;text-align: center;margin-top: 7px;">Si vous avez déjà un compte, cliquez <u><a href="/connexion">ici</a></u></p>
     <% end %>
   </div>
 </div>

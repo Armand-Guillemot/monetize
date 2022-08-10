@@ -1,4 +1,7 @@
 
 var item = $('#social-<%= @user_social.id %>')
-item.fadeOut( 200, "linear");
+item.remove();
 
+if ($('#social').children().length == 0) {
+ $('.next-step')[0].classList.remove("enabled");
+}

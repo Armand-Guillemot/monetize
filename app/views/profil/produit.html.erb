@@ -1,0 +1,16 @@
+<div class="section social-section">
+  <div>
+    <h3 class="mb-2">Étape 3</h3>
+    <div class="flex-center">
+      <%= render "components/steps", step: 3 %>
+    </div>
+    <h2>Choisisez votre produit</h2>
+    <h4>Afin que nous puissions vérifier votre profil au plus vite,<br>
+      renseignez le ou les réseaux sur lequels vous souhaitez communiquer</h4>
+    <div class="flex-center next-step <%= 'enabled' if false %>" style="gap:10px;">
+      <a href="/profil/produit" class="cta cta-sm">Étape suivante</a>
+      <i class="fas fa-angle-right"></i>
+    </div>
+    <%= render "components/product_chooser" %>
+  </div>
+</div>
