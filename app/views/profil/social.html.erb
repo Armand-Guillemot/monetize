@@ -1,5 +1,5 @@
 <div class="section social-section">
-  <div>
+  <div class="fadable">
     <h3 class="mb-2">Étape 2</h3>
     <div class="flex-center">
       <%= render "components/steps", step: 2 %>
@@ -9,8 +9,9 @@
       renseignez le ou les réseaux sur lequels vous souhaitez communiquer</h4>
     <%= render "components/user_social_manager"%>
     <div class="flex-center next-step <%= 'enabled' if current_user.user_socials.present? %>" style="gap:10px;">
-      <a href="/profil/produit" class="cta cta-sm">Étape suivante</a>
+      <%= link_to "Étape suivante", "/profil/produit", class: "cta cta-sm", :onclick=>'$(".fadable").fadeOut();' %>
       <i class="fas fa-angle-right"></i>
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "fadein" %>
