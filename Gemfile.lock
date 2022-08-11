@@ -66,7 +66,6 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    aos (0.1.0)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
     bcrypt (3.1.18)
@@ -233,7 +232,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aos
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
