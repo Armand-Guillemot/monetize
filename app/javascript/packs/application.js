@@ -55,3 +55,5 @@ document.addEventListener('DOMContentLoaded', function() {
     mirror: false, // whether elements should animate out while scrolling past them // if you are using turbolinks
   });
 });
+
+window.addEventListener('load', AOS.refresh)
