@@ -44,10 +44,9 @@ $('.owl-carousel').owlCarousel({
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-document.addEventListener('DOMContentLoaded', function() {
-  AOS.init({
+$(function() {
+    AOS.init({
     disable: false,
-    startEvent: 'turbolinks:load',
     delay: 0, // values from 0 to 3000, with step 50ms
     duration: 400, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
@@ -56,4 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-window.addEventListener('load', AOS.refresh)
+document.addEventListener("turbolinks:load", function() {
+  AOS.refreshHard()
+});
+
+
