@@ -15,48 +15,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel';
 
-import JQuery from 'jquery';
-window.$ = window.JQuery = JQuery;
-$(document).ready(function(){
-$('.owl-carousel').owlCarousel({
-  dots: false,
-  nav: true,
-  autoplay: true,
-  autoplayHoverPause: true,
-  loop: true,
-  responsive:{
-    0:{
-      items:1
-     },
-     850:{
-      items:2
-     },
-    1300:{
-     items:3
-     }
-   }
- })
-});
-
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-$(function() {
-    AOS.init({
-    disable: false,
-    delay: 0, // values from 0 to 3000, with step 50ms
-    duration: 400, // values from 0 to 3000, with step 50ms
-    easing: 'ease', // default easing for AOS animations
-    once: false, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them // if you are using turbolinks
-  });
-});
-
-document.addEventListener("turbolinks:load", function() {
-  AOS.refreshHard()
-});
 
 
