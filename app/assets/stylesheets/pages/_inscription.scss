@@ -9,7 +9,7 @@
   .invalid-feedback {
     color:$primary-color!important;
     position:absolute;
-    text-align:center;
+    font-size: 12px;
   }
 
 
@@ -75,8 +75,8 @@
         margin:0 auto;
 position:relative;
         &::after {
-
-      font-family: "Font Awesome 5 Free";
+  cursor: auto;
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   display: block;
   width: 17%;

@@ -25,11 +25,18 @@
 
 html {
     font-size: calc(11.5px + 0.3vw);
+      // overflow-x:unset!important;
+      width:100%!important;
+    background-color:white;
 
 }
 
 body {
   padding-top: $navbar-height;
+    // overflow-x:unset!important;
+    width:100%!important;
+  background-color:white;
+
 }
 
 a {
@@ -47,6 +54,7 @@ h1, h2, h3, h4, h5, p {
 
 
 h1 {
+
   z-index:0;
   text-align:center;
   display: inline-block;
@@ -75,7 +83,6 @@ h1 {
     z-index: -1;
     // box-shadow:  $inset;
     border-radius:5px;
-    opacity: 0.9
   }
 }
 
@@ -124,6 +131,9 @@ p {
   color: $text-color;
   font-family: $body-font;
   font-size: .95rem;
+  &.small {
+    font-size: .8rem;
+  }
 }
 
 

@@ -1,0 +1,161 @@
+.dashboard-section {
+  padding: 70px 10px;
+
+
+  max-width: 1000px;
+  p,h5 {
+    margin:0;
+  }
+
+
+@media (max-width:800px) {
+  .line-container {
+    flex-direction: column;
+    margin: 50px 0;
+    gap:10px;
+  }
+  .left-product-info {
+    flex-direction:column;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .dashboard-panel {
+    padding:20px;
+    background-color:#f8f8f8;
+    margin-bottom:20px;
+
+
+
+    .dashboard-panel-header {
+
+
+    }
+
+    .dashboard-panel-content {
+  padding:30px;
+
+  i {
+    color:black;
+    margin-right:10px;
+    font-size:18px;
+  }
+
+    }
+
+  }
+
+  @media (max-width:900px) {
+  .profil-socials-container, .content-container  {
+    flex-direction:column;
+  }
+
+  .affiliate-manager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+}
+
+
+
+  .profil-socials-container {
+    align-items:stretch;
+    gap: 20px;
+    .profil {
+      min-width:calc(50% - 10px);
+
+      .validation {
+        .account-validation-status {
+            height: 15px;
+            width:15px;
+            background-color: $green;
+            margin-right:10px;
+            border-radius: 50%;
+        }
+
+        .validation-content {
+          margin-left:25px;
+
+          .validation-status {
+            height: 10px;
+            width:10px;
+            background-color: $green;
+            margin-right:5px;
+            border-radius: 50%;
+            &.nok {
+              background-color: $orange;
+            }
+          }
+        }
+      }
+
+    }
+    .socials {
+        min-width:calc(50% - 10px);
+        .social-image-container a {
+          display:none;
+        }
+    }
+  }
+
+}
+
+.spinner-container {
+
+
+    .verification-spinner {
+      margin-right:10px;
+      border: 3px solid white;
+      border-top: 3px solid #38aecc;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+}
+
+.help {
+  gap:20px;
+  display:inline-block;
+
+  .content-container {
+    gap: 20px;
+    border-radius:10px;
+    background-color:$primary-color;
+    padding:20px;
+    box-shadow:$inset;
+    .cta {
+      font-size:13px;
+    }
+    p,h5,i {
+      color:white;
+    }
+  }
+  .avatar {
+    flex-direction:column;
+    img {
+      height:75px;
+      border-radius:50%;
+      border: 4px solid white;
+      background:white;
+    }
+  }
+}
+
+

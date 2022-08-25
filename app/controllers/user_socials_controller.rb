@@ -22,9 +22,11 @@ class UserSocialsController < ApplicationController
   # POST /user_socials or /user_socials.json
   def create
     @user_social = UserSocial.new(user_social_params)
+    @user = @user_social.user
 
     respond_to do |format|
       if @user_social.save
+        @user.update(step_1: true)
         format.html { redirect_to user_social_url(@user_social), notice: "User social was successfully created." }
         format.js   { render 'user_socials/create'}
         format.json { render :show, status: :created, location: @user_social }
@@ -50,9 +52,11 @@ class UserSocialsController < ApplicationController
 
   # DELETE /user_socials/1 or /user_socials/1.json
   def destroy
+    @user = @user_social.user
     @user_social.destroy
 
     respond_to do |format|
+      @user.update(step_1: false) unless @user.user_socials.present?
       format.html { redirect_to user_socials_url, notice: "User social was successfully destroyed." }
       format.json { head :no_content }
       format.js   { render 'user_socials/destroy'}

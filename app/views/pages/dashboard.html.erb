@@ -1,3 +1,113 @@
-<div class="flex-center" style="height:100vh;background:white;">
-  dashboard
+<div class="container dashboard-section">
+  <div>
+    <div class="">
+      <h2>Mon Dashboard</h2>
+      <h4>Suivez les trois étapes expliquées ci-dessous:</h4>
+    </div>
+    <div class="spacer"></div>
+    <div class="dashboard-content">
+      <div class="flex-between profil-socials-container">
+        <div class="dashboard-panel profil">
+          <div class="dashboard-panel-header">
+            <h5>Mon Profil</h5>
+          </div>
+          <div class="dashboard-panel-content">
+            <div class="dash-pseudo mb-2 flex-start">
+              <i class="fas fa-user-tie"></i>
+              <p><%= current_user.pseudo %></p>
+            </div>
+            <div class="dash-email mb-2 flex-start">
+              <i class="fas fa-envelope"></i>
+              <p><%= current_user.email %></p>
+            </div>
+            <div class="dash-phone mb-4 flex-start">
+              <i class="fas fa-phone"></i>
+              <p><%= current_user.numero_de_telephone %></p>
+            </div>
+            <div class="validation">
+              <% if current_user.confirmed %>
+                <div class="flex-start mb-2">
+                  <div class="account-validation-status"></div>
+                  <p>Validé</p>
+                </div>
+              <% else %>
+                <div class="spinner-container flex-start mb-2">
+                  <div class="verification-spinner"></div>
+                  <p>Vérification en cours...</p>
+                </div>
+              <% end %>
+              <div class="validation-content">
+                <div class="validation-1 flex-start">
+                  <span class="validation-status"></span>
+                  <p class="small">
+                    Création du compte
+                  </p>
+                </div>
+                <div class="validation-2 flex-start">
+                  <span class="validation-status <%= 'nok' unless current_user.step_1  %>"></span>
+                  <p class="small">
+                    Ajouter un réseau
+                  </p>
+                </div>
+                <div class="validation-3 flex-start">
+                  <span class="validation-status <%= 'nok' unless current_user.step_2  %>"></span>
+                  <p class="small">
+                    Postuler pour un produit
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-panel socials">
+          <div class="flex-between">
+            <h5>Mes Résaux</h5>
+            <a class="cta" style="padding: 5px 12px;" href="/social">+</a>
+          </div>
+          <div id="social">
+            <% UserSocial.where(user: current_user).each do |user_social| %>
+              <%= render "components/user_social", user_social: user_social %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard-panel validated-products">
+        <div class="flex-between">
+          <h5>Mes Produits</h5>
+          <a class="cta" style="padding: 5px 12px;" href="/catalogue">+</a>
+        </div>
+        <%= render "components/product_dashboard", user_products: current_user.user_products.where(status:1) %>
+      </div>
+      <div class="dashboard-panel pending-products">
+        <h5>Mes Produits en validation</h5>
+        <%= render "components/product_dashboard", user_products: current_user.user_products.where(status:0) %>
+      </div>
+      <div class="spacer"></div>
+      <div class="flex-center">
+        <div class=" help">
+          <div class="flex-center">
+            <h5 class="mb-1">Besoin d'aide?</h5>
+          </div>
+          <div class="content-container flex-center">
+            <div class="avatar flex-center">
+              <img src="/help_avatar.png" alt="">
+              <h5>Kenan</h5>
+              <p class="small">Affiliate Manager</p>
+            </div>
+            <div class="affiliate-manager">
+              <div class="dash-email mb-2 flex-start">
+                <i class="fas fa-envelope"></i>
+                <p class="small" style="margin-left:10px;">contact@monetize.fr</p>
+              </div>
+              <div class="dash-phone mb-3 flex-start">
+                <i class="fas fa-phone"></i>
+                <p class="small" style="margin-left:10px;"><%= current_user.numero_de_telephone %></p>
+              </div>
+              <div class="flex-center"><a href="#" class="cta cta-sm light"><i style="margin-right: 5px;" class="fas fa-calendar"></i>Prendre RDV</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -4,113 +4,46 @@
       <div class="tabs-block">
         <div id="tabs-section" class="tabs">
           <ul class="tab-head">
-            <li>
-              <a href="#tab-1" class="tab-link active"> <span class="material-icons tab-icon fas fa-store"></span> <span class="tab-label">Mentorat Ecommerce</span></a>
-            </li>
-            <li>
-              <a href="#tab-2" class="tab-link"> <span class="material-icons tab-icon fas fa-home"></span> <span class="tab-label">Mentorat Immobilier</span></a>
-            </li>
-            <li>
-              <a href="#tab-3" class="tab-link"> <span class="material-icons tab-icon fas fa-dumbbell"></span> <span class="tab-label">Formation Mental d'Acier</span></a>
-            </li>
-            <!--            <li>
-              <a href="#tab-4" class="tab-link"> <span class="material-icons tab-icon fas fa-angle-right"></span> <span class="tab-label">Concealer</span></a>
-            </li>
-            <li>
-              <a href="#tab-5" class="tab-link"> <span class="material-icons tab-icon fas fa-angle-right"></span> <span class="tab-label">Blush</span></a>
-            </li> -->
+            <% Product.all.each_with_index do |product, index| %>
+              <li>
+                <a href="#tab-<%= product.id %>" class="product-tab tab-link <%= 'active' if index == 0 %>"> <span class="material-icons tab-icon <%= product.icon %>"></span> <span class="tab-label"><%= product.title %></span></a>
+              </li>
+            <% end %>
           </ul>
-          <section id="tab-1" class="tab-body entry-content active active-content">
-            <div class="flex-center w-100">
-              <img src="/ecom.png" alt="">
-            </div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore quo rerum animi dolores? Labore neque eveniet excepturi suscipit magni quaerat.</p>
-            <h3><i style="margin-right:11px;" class="fas fa-align-left"></i>Description</h3>
-            <p>Face primers’ exact effects on your skin and makeup can vary, but overall, their main purpose is to keep your skin looking smooth and your makeup looking fresh all day long.</p>
-            <h3><i style="margin-right:11px;" class="fas fa-list-ol"></i>Contenu</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Officiis maxime recusandae tempore voluptatum magni quisquam facilis voluptatem accusamus ea rerum.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum similique ipsam dolore sed facilis exercitationem, adipisci odit. Quasi, similique?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda unde tempore molestiae reprehenderit, ipsa laboriosam possimus repudiandae eveniet pariatur architecto.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Illum ipsum, libero voluptatum harum corporis cum consectetur consequatur aliquid ipsam quisquam!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, tenetur recusandae, odit explicabo consequuntur cupiditate earum pariatur magni animi perspiciatis.</p>
-            <h3><i style="margin-right:11px;" class="fas fa-coins"></i>Rémuneration</h3>
-            <p>Face primers’ exact effects on your skin and makeup can vary, but overall, their main purpose is to keep your skin looking smooth and your makeup looking fresh all day long.</p>
-            <h3><i style="margin-right:11px;" class="fas fa-bullhorn"></i>Contenu Marketing</h3>
-            <p>Face primers’ exact effects on your skin and makeup can vary, but overall, their main purpose is to keep your skin looking smooth and your makeup looking fresh all day long.</p>
-            <h3><i style="margin-right:11px;" class="fas fa-clipboard-list"></i>Critères</h3>
-            <p>Face primers’ exact effects on your skin and makeup can vary, but overall, their main purpose is to keep your skin looking smooth and your makeup looking fresh all day long.</p>
-            <div class="spacer"></div>
-            <div class="flex-center">
-              <a href="" class="cta">Choisir Mentorat ECommerce</a>
-            </div>
-          </section>
-          <section id="tab-2" class="tab-body entry-content">
-            <h2>Foundation</h2>
-            <p>Personally, I prefer BB cream to regular foundation, as I find it to be much more natural-looking. It is a great option if you’re looking for something that has skincare benefits such as moisturizing or priming (some BB creams have primer built in).</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>Personally, I prefer BB cream to regular foundation, as I find it to be much more natural-looking. It is a great option if you’re looking for something that has skincare benefits such as moisturizing or priming (some BB creams have primer built in).</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>Personally, I prefer BB cream to regular foundation, as I find it to be much more natural-looking. It is a great option if you’re looking for something that has skincare benefits such as moisturizing or priming (some BB creams have primer built in).</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>Foundation is probably the hardest part of your makeup routine to get right, as you not only have to consider the type of coverage you want (i.e. sheer/natural, medium, or full), but also your skin type and undertones.</p>
-            <p>If you are new to wearing foundation or aren’t sure what type/shade is right for you, I’d highly recommend going to your nearest Sephora, MAC, or department store and have a makeup artist help you pick out one that matches your complexion and fits your coverage needs. It’s also a good idea to request a sample if you want to see how a formula feels on your skin before buying.</p>
-          </section>
-          <section id="tab-3" class="tab-body entry-content">
-            <h2>BB Cream</h2>
-            <p>Personally, I prefer BB cream to regular foundation, as I find it to be much more natural-looking. It is a great option if you’re looking for something that has skincare benefits such as moisturizing or priming (some BB creams have primer built in).</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-          </section>
-          <!--   <section id="tab-4" class="tab-body entry-content">
-            <h2>Concealer</h2>
-            <p>Personally, I prefer BB cream to regular foundation, as I find it to be much more natural-looking. It is a great option if you’re looking for something that has skincare benefits such as moisturizing or priming (some BB creams have primer built in).</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>If you have acne, dark circles, or any kind of discoloration, concealer is a must-have.</p>
-            <p>Concealers come in full-coverage and sheerer-coverage formulations, and which one you should choose depends on how much you’re trying to cover up.</p>
-            <p>When choosing a concealer for acne and/or discoloration, find a shade that is as close as possible to your foundation/BB cream shade for the most natural look.</p>
-          </section>
-          <section id="tab-5" class="tab-body entry-content">
-            <h2>Blush</h2>
-            <p>Personally, I prefer BB cream to regular foundation, as I find it to be much more natural-looking. It is a great option if you’re looking for something that has skincare benefits such as moisturizing or priming (some BB creams have primer built in).</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>In addition, if you are new to the makeup world, a good BB cream is an even better place to start than foundation, as it feels lighter on the skin, is hard to overdo, and can be applied with your fingers.</p>
-            <p>Putting on blush can have a huge effect on your overall look, and I personally never leave it out of my makeup routine. Blush is especially necessary if you’re wearing a foundation with more opaque coverage, which can sometimes leave your complexion looking a little bit flat.</p>
-            <p>Blush comes in powder, gel, and cream formulations, with powder being the most popular. Recently, though, cream and gel blush have become very popular as well.</p>
-          </section> -->
+          <% Product.all.each_with_index do |product, index| %>
+            <section id="tab-<%= product.id %>" class="tab-body entry-content <%= 'active active-content' if index == 0 %> ">
+              <div class="flex-center w-100">
+                <img src="<%= product.logo %>" alt="">
+              </div>
+              <h3><i style="margin-right:11px;" class="fas fa-align-left"></i>Description</h3>
+              <p><%= product.description %></p>
+              <h3><i style="margin-right:11px;" class="fas fa-list-ol"></i>Contenu</h3>
+              <p><%= product.content %></p>
+              <h3><i style="margin-right:11px;" class="fas fa-coins"></i>Rémuneration</h3>
+              <p><%= product.rem %></p>
+              <h3><i style="margin-right:11px;" class="fas fa-clipboard-list"></i>Critères</h3>
+              <p><%= product.criterion %></p>
+              <div class="spacer"></div>
+              <div class="flex-center">
+                <% if current_user.has_user_product(product) && current_user.user_product(product).status == 1 %>
+                  <!-- Vérifié -->
+                  <div class="user-product-verified flex-center">
+                    <p>Validé</p>
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                <% elsif current_user.has_user_product(product) && current_user.user_product(product).status == 0 %>
+                  <!-- Vérification -->
+                  <div class="spinner-container flex-start">
+                    <div class="verification-spinner"></div>
+                    <p>Vérification en cours...</p>
+                  </div>
+                <% else %>
+                  <!-- Choisir -->
+                  <%= link_to("Choisir " + product.title, user_products_path(user_product: {user_id: current_user.id, product_id: product.id, status: 0}), class:"cta", method:"post") %>
+                <% end %>
+              </div>
+            </section>
+          <% end %>
         </div>
       </div>
     </div>

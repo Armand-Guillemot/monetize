@@ -15,13 +15,13 @@
   <div class="section-spacer card-spacer"></div>
   <div class="footer flex-center">
     <div class="status flex-center">
-      <% if status == 1 %>
+      <% if status == 0 %>
         <div class="dot" style="background:orange;"></div>
         <h5 class="m-0">Victime de son succès</h5>
-      <% elsif status == 2 %>
+      <% elsif status == 1 %>
         <div class="dot" style="background:green;"></div>
         <h5 class="m-0">Disponible</h5>
-      <% elsif status == 3 %>
+      <% elsif status == 2 %>
         <div class="dot" style=""></div>
         <h5 class="m-0">Bientôt disponible</h5>
       <% end %>

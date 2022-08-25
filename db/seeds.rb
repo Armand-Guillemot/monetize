@@ -19,4 +19,6 @@ Social.create(title: 'Twitch', logo: '/twitch.png') unless Social.where(title: '
 Social.create(title: 'Site Internet', logo: '/web.png') unless Social.where(title: 'Site Internet').present?
 Social.create(title: 'Autre', logo: '/more.png') unless Social.where(title: 'Autre').present?
 
-Product.create(title: 'Mentorat ECommerce', logo: '/ecom.png', description: nil, content: nil, rem: nil, marketing: nil, criterion: nil, status: nil, bonus: nil, cpf: nil) unless Product.where(title: 'Mentorat ECommerce').present?
+Product.create(title: 'Mentorat ECommerce', icon: "fas fa-store", logo: '/ecom.png', description: "Description", content: "Content", rem: "rem", marketing: "marketing", criterion: "criterion", status: 1, bonus: true, cpf: true) unless Product.where(title: 'Mentorat ECommerce').present?
+Product.create(title: 'NBTraders', icon: "fas fa-chart-line", logo: '/nbt.png', description: "Description", content: "Content", rem: "rem", marketing: "marketing", criterion: "criterion", status: 0, bonus: false, cpf: false) unless Product.where(title: 'NBTraders').present?
+Product.create(title: 'Mentorat Immobilier', icon: "fas fa-home", logo: '/immo.png', description: "Description", content: "Content", rem: "rem", marketing: "marketing", criterion: "criterion", status: 2, bonus: true, cpf: true) unless Product.where(title: 'Mentorat Immobilier').present?

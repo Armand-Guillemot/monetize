@@ -32,10 +32,16 @@
       .add-social {
         color:red;
       }
+      select {
+
+      }
       input, select {
         background:white;
         border:none;
         box-shadow:$outset;
+        color:$dark;
+
+
       }
     }
   }
@@ -44,7 +50,7 @@
 #social {
   display: flex;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 15px;
   flex-direction: column;
   padding: 30px;

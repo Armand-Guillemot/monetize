@@ -1,0 +1,13 @@
+<div class="section social-section">
+  <div data-aos="fade-left" data-aos-delay="500" class="">
+    <h2>Vos réseaux</h2>
+    <h4>Afin que nous puissions vérifier votre profil au plus vite,<br>
+      renseignez le ou les réseaux sur lequels vous souhaitez communiquer</h4>
+    <%= render "components/user_social_manager"%>
+    <div class="flex-center next-step <%= 'enabled' if current_user.user_socials.present? %>" style="gap:10px;">
+      <%= link_to "Dashboard", dashboard_path, class: "cta cta-sm", :onclick=>'$(".fadable").fadeOut();' %>
+      <i class="fas fa-angle-right"></i>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "home_aos" %>
