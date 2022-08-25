@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def cta
     if current_user
       @cta_url = "/dashboard"
-      @cta_text = "Dashboard"
+      @cta_text = '<i class="fas fa-tachometer-alt"></i> Dashboard'.html_safe
     else
       @cta_url = "/inscription"
       @cta_text = '<i class="fas fa-user-plus"></i> Inscription'.html_safe

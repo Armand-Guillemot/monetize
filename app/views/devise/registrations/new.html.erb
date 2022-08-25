@@ -1,5 +1,5 @@
 <div class="flex-center form-outer-container">
-  <div class="form-container">
+  <div data-aos="fade" class="form-container">
     <div class="form-header">
       <h5>Inscription Monetize</h5>
       <div class="flex-center">
@@ -10,7 +10,7 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
-        <div class="upper-form-group pseudo">
+        <div data-aos="fade-up" data-aos-delay="400" class="upper-form-group pseudo">
           <%= f.input :pseudo,
           label: false,
           placeholder: "Pseudo",
@@ -18,28 +18,28 @@
                 autofocus: true,
                 input_html: { class: "form-pseudo",autocomplete: "username" } %>
         </div>
-        <div class="upper-form-group numero_de_telephone">
+        <div data-aos="fade-up" data-aos-delay="500" class="upper-form-group numero_de_telephone">
           <%= f.input :numero_de_telephone,
           label: false,
           placeholder: "Numéro de téléphone",
                 required: true,
                 input_html: { class: "form-tel",autocomplete: "phone_number" }%>
         </div>
-        <div class="upper-form-group email">
+        <div data-aos="fade-up" data-aos-delay="600" class="upper-form-group email">
           <%= f.input :email,
           label: false,
           placeholder: "Adresse email",
                 required: true,
                 input_html: { class: "form-email",autocomplete: "email" }%>
         </div>
-        <div class="upper-form-group password">
+        <div data-aos="fade-up" data-aos-delay="700" class="upper-form-group password">
           <%= f.input :password,
           label: false,
           placeholder: "Mot de passe",
                 required: true,
                 input_html: { class: "form-pw",autocomplete: "new-password" } %>
         </div>
-        <div class="upper-form-group password">
+        <div data-aos="fade-up" data-aos-delay="800" class="upper-form-group password">
           <%= f.input :password_confirmation,
           label: false,
           placeholder: "Confirmation du mot de passe",
@@ -47,6 +47,7 @@
                 input_html: { class: ".form-pw",autocomplete: "new-password" } %>
         </div>
       </div>
+      <div class="spacer spacer-sm"></div>
       <div class="form-actions flex-center">
         <%= f.button :submit, "S'inscrire", class:"cta cta-sm" %>
       </div>
@@ -54,3 +55,4 @@
     <% end %>
   </div>
 </div>
+<%= javascript_pack_tag "home_aos" %>

@@ -3,7 +3,7 @@
     <div class="social-form">
       <%= simple_form_for UserSocial.new, remote: true do |f| %>
         <div class="field">
-          <%= f.association :social, label_method: :title, value_method: :id, label: false, placeholder: "@zidane", prompt: 'Réseaux' %>
+          <%= f.association :social, label_method: :title, value_method: :id, label: false, prompt: "Choisir" %>
           <%= f.input :pseudo, class: "form-control col-lg-8", placeholder: "@exemple", label: false %>
           <%= button_tag type: 'submit', class: "add-social" do %>
             <i class="fas fa-plus-circle"></i>

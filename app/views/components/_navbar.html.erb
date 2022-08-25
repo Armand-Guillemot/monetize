@@ -1,7 +1,7 @@
 <div class="nav">
   <input type="checkbox" id="nav-check">
   <div class="nav-header flex-center">
-    <a data-turbolinks="false" href="/">
+    <a href="/">
       <img src="/logotext.png" alt="Logo">
     </a>
   </div>
@@ -21,36 +21,34 @@
           </label>
         </div>
         <div class="nav-links">
-          <a data-turbolinks="false" href="/#section-2" >
-            <p class="norm">Avantages</p>
+          <a class="" href="/#section-2" >
+            <p class="hover-underline-animation norm">Avantages</p>
           </a>
-          <a data-turbolinks="false" href="/#section-3" >
-            <p class="norm">Comment ca marche?</p>
+          <a class="" href="/#section-3" >
+            <p class="hover-underline-animation norm">Comment ca marche?</p>
           </a>
-          <a data-turbolinks="false" href="/#section-4" >
-            <p class="norm">Catalogue</p>
+          <a class="" href="/#section-4" >
+            <p class="hover-underline-animation norm">Catalogue</p>
           </a>
-          <a data-turbolinks="false" href="/#section-5" >
-            <p class="norm">Vos retours</p>
+          <a class="" href="/#section-5" >
+            <p class="hover-underline-animation norm">Vos retours</p>
           </a>
-          <a data-turbolinks="false" href="/#section-6" >
-            <p class="norm">FAQ</p>
+          <a class="" href="/#section-6" >
+            <p class="hover-underline-animation norm">FAQ</p>
           </a>
           <% if current_user %>
-            <a href="/dashboard" >
+            <a class="" href="/dashboard" >
               <div class="cta nav-cta"><i style="margin-right: 5px;" class="fas fa-tachometer-alt"></i>Dashboard</div>
             </a>
-            <a href="/sign_out" >
+            <a class="" href="/sign_out" >
               <i class="fas fa-sign-out-alt"></i>
-              <p class="norm">Déconnexion</p>
             </a>
           <% else %>
-            <a href="<%= @cta_url %>" >
+            <a class="" href="<%= @cta_url %>" >
               <div class="cta nav-cta"><%= @cta_text %></div>
             </a>
-            <a href="/connexion" >
+            <a class="" href="/connexion" >
               <i class="fas fa-sign-in-alt mr-2"></i>
-              <p class="norm">Connexion</p>
             </a>
           <% end %>
         </div>

@@ -1,11 +1,18 @@
-<div class="carousel-container flex-center">
-  <div class="owl-carousel">
-    <%= render "components/feedback_card", content: "1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id et, facilis accusamus, libero explicabo natus cumque ex? Aliquid, blanditiis, sequi.", stars: 2.5 %>
-    <%= render "components/feedback_card", content: "2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias distinctio culpa doloribus reprehenderit pariatur libero rem dicta aspernatur, numquam voluptatibus?", stars: 5 %>
-    <%= render "components/feedback_card", content: "3 Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Nam soluta iste repellat et nemo blanditiis id voluptates repellendus nesciunt cumque!", stars: 3.5 %>
-    <%= render "components/feedback_card", content: "4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id et, facilis accusamus, libero explicabo natus cumque ex? Aliquid, blanditiis, sequi.", stars: 4.5 %>
-    <%= render "components/feedback_card", content: "5 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias distinctio culpa doloribus reprehenderit pariatur libero rem dicta aspernatur, numquam voluptatibus?", stars: 2.5 %>
-    <%= render "components/feedback_card", content: "6 Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Nam soluta iste repellat et nemo blanditiis id voluptates repellendus nesciunt cumque!", stars: 5 %>
+<div class="row2Wrap">
+  <div class="slider" id="slider2">
+    <div class="carou-item"><%= render "components/feedback_card", pseudo:"Toulicoin",  title: "Parfait!", content: "Agence au top et aide les affiliés pour la communication, dès mes débuts mes commissions ont dépassés mes espérances! Je recommande vivement.", stars: 4.8 %></div>
+    <div class="carou-item"><%= render "components/feedback_card", pseudo:"Nathan L.",  title: "Une équipe au top", content: "Je recommande fortement l'équipe avec laquelle je travaille depuis maintenant 4 mois. Toujours à l'écoute et plein de bons conseils 👍", stars: 5 %></div>
+    <div class="carou-item"><%= render "components/feedback_card", pseudo:"",  title: "", content: "3 Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Nam soluta iste repellat et nemo blanditiis id voluptates repellendus nesciunt cumque!", stars: 3.5 %></div>
+    <i class="left" class="arrows" style="z-index:2; position:absolute;">
+      <svg viewBox="0 0 100 100">
+        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path>
+      </svg>
+    </i>
+    <i class="right" class="arrows" style="z-index:2; position:absolute;">
+      <svg viewBox="0 0 100 100">
+        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path>
+      </svg>
+    </i>
   </div>
 </div>
 <%= javascript_pack_tag "carousel" %>

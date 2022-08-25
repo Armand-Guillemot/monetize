@@ -1,5 +1,5 @@
-<div class="section social-section">
-  <div class="fadable">
+<div id="product" class="section social-section">
+  <div data-aos="fade-left" data-aos-delay="500" class="">
     <h3 class="mb-2">Étape 3</h3>
     <div class="flex-center">
       <%= render "components/steps", step: 3 %>
@@ -14,4 +14,4 @@
     <%= render "components/product_chooser" %>
   </div>
 </div>
-<%= javascript_pack_tag "fadein" %>
+<%= javascript_pack_tag "home_aos" %>

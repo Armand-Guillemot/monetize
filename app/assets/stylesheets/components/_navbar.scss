@@ -1,4 +1,38 @@
 
+
+.hover-underline-animation {
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  border-radius:2px;
+  background-color: $primary-color;
+  transform-origin: center center;
+  transition: transform 0.15s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: center center;
+}
+
+
+
+
+
+
+
+
+
+
+
 .nav {
   height: $navbar-height;
   width: 100%;
@@ -18,7 +52,7 @@
   height:100%;
   margin-left: 20px;
   a{
-    height:75%;
+    height:70%;
     img {
       height:100%
     }
@@ -110,7 +144,7 @@
     left: 0px;
         display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
     .nav-cta {
@@ -149,7 +183,7 @@
     height: calc(#{$open-nav-height} - #{$navbar-height});
     overflow-y: auto;
     touch-action: none;
-    padding-top: 10vh;
+    padding-top: 5vh;
     p {
       color:$dark;
     }

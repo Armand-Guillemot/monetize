@@ -1,0 +1,16 @@
+.form-group.select.required.user_social_social {
+  position: relative;
+  &::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0dd";
+    position: absolute;
+    right: 5px;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    color: black;
+    pointer-events: none;
+    color:$primary-color;
+  }
+}
+
