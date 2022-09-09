@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: 'users/registrations' }, path:"", path_names: { sign_in: '/connexion', sign_up: '/inscription'}
   root to: "pages#home"
   get '/cgu', to: "pages#cgu"
