@@ -4,11 +4,11 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :logo
       t.string :icon
-      t.string :description
-      t.string :content
-      t.string :rem
-      t.string :marketing
-      t.string :criterion
+      t.text :description
+      t.text :content
+      t.text :rem
+      t.text :marketing
+      t.text :criterion
       t.integer :status
       t.boolean :bonus
       t.boolean :cpf

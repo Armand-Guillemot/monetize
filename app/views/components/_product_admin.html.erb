@@ -1,0 +1,25 @@
+<% user_products.each do |user_product| %>
+  <div class="line-container flex-between w-100">
+    <div class="flex-between left-product-info" style="min-width:60%; gap:10px;">
+      <img src="<%= user_product.product.logo %>" style="max-height:50px;max-width:200px;" alt="">
+      <% if user_product.status == 1 %>
+        <div class="line-validation flex-start">
+          <div class="account-validation-status"></div>
+          <p>Actif</p>
+        </div>
+      </div>
+      <a class="" href="/dashboard" target="_blank" >
+        <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-external-link"></i>Dashboard</div>
+      </a>
+    <% else %>
+      <div class="line-validation flex-start">
+        <div class="account-validation-status-nok"></div>
+        <p>En attente de validation</p>
+      </div>
+    </div>
+    <a class="" href="/dashboard" target="_blank" >
+      <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-plus"></i>Créer un accès</div>
+    </a>
+  <% end %>
+</div>
+<% end %>
