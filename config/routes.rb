@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: "pages#dashboard"
   get '/catalogue', to: "pages#catalogue"
   get '/social', to: "pages#social"
+  get '/link', to: "pages#link"
   resources :profil
   resources :user_socials
   resources :user_products

@@ -9,11 +9,15 @@
 
 
 @media (max-width:800px) {
-  .line-container {
+  .under-line-container, .stats-bar {
     flex-direction: column;
-    margin: 50px 0;
+    margin: 10px 0;
     gap:10px;
   }
+
+
+
+
   .left-product-info {
     flex-direction:column;
   }

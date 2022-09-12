@@ -16,30 +16,33 @@
                 <img src="<%= product.logo %>" alt="">
               </div>
               <h3><i style="margin-right:11px;" class="fas fa-align-left"></i>Description</h3>
-              <p><%= product.description %></p>
+              <div class="product-rich-text product-description"><%= product.description.html_safe %></div>
               <h3><i style="margin-right:11px;" class="fas fa-list-ol"></i>Contenu</h3>
-              <p><%= product.content %></p>
+              <div class="product-rich-text product-content"><%= product.content.html_safe %></div>
               <h3><i style="margin-right:11px;" class="fas fa-coins"></i>Rémuneration</h3>
-              <p><%= product.rem %></p>
+              <div class="product-rich-text product-rem"><%= product.rem.html_safe %></div>
               <h3><i style="margin-right:11px;" class="fas fa-clipboard-list"></i>Critères</h3>
-              <p><%= product.criterion %></p>
+              <div class="product-rich-text product-criterion"><%= product.criterion.html_safe %></div>
               <div class="spacer"></div>
               <div class="flex-center">
-                <% if current_user.has_user_product(product) && current_user.user_product(product).status == 1 %>
-                  <!-- Vérifié -->
-                  <div class="user-product-verified flex-center">
-                    <p>Validé</p>
-                    <i class="fas fa-check-circle"></i>
-                  </div>
-                <% elsif current_user.has_user_product(product) && current_user.user_product(product).status == 0 %>
-                  <!-- Vérification -->
-                  <div class="spinner-container flex-start">
-                    <div class="verification-spinner"></div>
-                    <p>Vérification en cours...</p>
-                  </div>
+                <% if current_user.has_user_product(product) %>
+                  <% if current_user.user_product(product).status == 1 %>
+                    <div class="user-product-verified flex-center">
+                      <p>Validé</p>
+                      <i class="fas fa-check-circle"></i>
+                    </div>
+                  <% else %>
+                    <div class="spinner-container flex-start">
+                      <div class="verification-spinner"></div>
+                      <p>Vérification en cours...</p>
+                    </div>
+                  <% end %>
                 <% else %>
-                  <!-- Choisir -->
-                  <%= link_to("Choisir " + product.title, user_products_path(user_product: {user_id: current_user.id, product_id: product.id, status: 0}), class:"cta", method:"post") %>
+                  <% if product.status == 1 %>
+                    <%= link_to("Choisir " + product.title, user_products_path(user_product: {user_id: current_user.id, product_id: product.id, status: 0}), class:"cta", method:"post") %>
+                  <% else %>
+                    <%= link_to( Product.statuses[product.status], user_products_path(user_product: {user_id: current_user.id, product_id: product.id, status: 0}), class:"cta disabled", method:"post") %>
+                  <% end %>
                 <% end %>
               </div>
             </section>
