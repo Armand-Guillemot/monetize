@@ -1,25 +1,98 @@
 <% user_products.each do |user_product| %>
-  <div class="line-container flex-between w-100">
-    <div class="flex-between left-product-info" style="min-width:60%; gap:10px;">
-      <img src="<%= user_product.product.logo %>" style="max-height:50px;max-width:200px;" alt="">
-      <% if user_product.status == 1 %>
-        <div class="line-validation flex-start">
-          <div class="account-validation-status"></div>
-          <p>Actif</p>
+  <div class="line-container">
+    <div class="under-line-container flex-between w-100">
+      <div class="flex-between left-product-info" style="min-width:60%; gap:10px;">
+        <img src="<%= user_product.product.logo %>" style="max-height:50px;max-width:200px;" alt="">
+        <% if user_product.status == 1 %>
+          <div class="line-validation flex-start">
+            <div class="account-validation-status"></div>
+            <p>Actif</p>
+          </div>
+        </div>
+        <a class="" href="<%= user_product.affiliate_auto_connect_url%>" target="_blank" >
+          <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-external-link"></i>Dashboard</div>
+        </a>
+      <% else %>
+        <div class="spinner-container flex-start">
+          <div class="verification-spinner"></div>
+          <p>Vérification en cours...</p>
         </div>
       </div>
-      <a class="" href="/dashboard" target="_blank" >
-        <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-external-link"></i>Dashboard</div>
+      <a class="" href="/dashboard" >
+        <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-calendar"></i>Prendre RDV</div>
       </a>
-    <% else %>
-      <div class="spinner-container flex-start">
-        <div class="verification-spinner"></div>
-        <p>Vérification en cours...</p>
+    <% end %>
+  </div>
+  <% if user_product.status == 1 %>
+    <hr style="margin: 10px 0;">
+    <div class="stats-bar flex-around">
+      <div class="duo-stats flex-around">
+        <div class="stat">
+          <% visits = ["Visites", user_product.visits, "fa-mouse"] %>
+          <div class="stat-header"><%= visits[0] %></div>
+          <div>
+            <span>
+              <i class="fas <%= visits[2] %>"></i>
+            </span>
+            <div class="stat-value"><%= visits[1] %></div>
+          </div>
+        </div>
+        <div class="stat">
+          <% inscriptions = ["Inscriptions", user_product.inscriptions, "fa-user"] %>
+          <div class="stat-header"><%= inscriptions[0] %></div>
+          <div>
+            <span>
+              <i class="fas <%= inscriptions[2] %>"></i>
+            </span>
+            <div class="stat-value"><%= inscriptions[1] %></div>
+          </div>
+        </div>
+      </div>
+      <div class="duo-stats flex-around">
+        <div class="stat">
+          <% ventes = ["Ventes", user_product.ventes, "fa-user-check"] %>
+          <div class="stat-header"><%= ventes[0] %></div>
+          <div>
+            <span>
+              <i class="fas <%= ventes[2] %>"></i>
+            </span>
+            <div class="stat-value"><%= ventes[1] %></div>
+          </div>
+        </div>
+        <div class="stat">
+          <% commissions = ["Ventes", number_to_currency(user_product.commissions/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+          <div class="stat-header"><%= commissions[0] %></div>
+          <div>
+            <span>
+              <i class="fas <%= commissions[2] %>"></i>
+            </span>
+            <div class="stat-value"><%= commissions[1] %></div>
+          </div>
+        </div>
+      </div>
+      <div class="duo-stats flex-around">
+        <div class="stat">
+          <% commissions_pending = ["Commissions en attentes", number_to_currency(user_product.commissions_pending/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+          <div class="stat-header"><%= commissions_pending[0] %></div>
+          <div>
+            <span>
+              <i class="fas <%= commissions_pending[2] %>"></i>
+            </span>
+            <div class="stat-value"><%= commissions_pending[1] %></div>
+          </div>
+        </div>
+        <div class="stat">
+          <% commissions_validated = ["Commissions validées", number_to_currency(user_product.commissions_validated/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+          <div class="stat-header"><%= commissions_validated[0] %></div>
+          <div>
+            <span>
+              <i class="fas <%= commissions_validated[2] %>"></i>
+            </span>
+            <div class="stat-value"><%= commissions_validated[1] %></div>
+          </div>
+        </div>
       </div>
     </div>
-    <a class="" href="/dashboard" >
-      <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-calendar"></i>Prendre RDV</div>
-    </a>
   <% end %>
 </div>
 <% end %>

@@ -5,6 +5,12 @@
 }
 
 
+.product-rich-text {
+  *{
+    font-family: $body-font;
+    color:  $text-color;
+  }
+}
 
 .article-container {
   padding: 2rem;

@@ -1,5 +1,37 @@
+
+
+.stats-bar {
+  gap: 40px;
+  .duo-stats {
+    gap: 20px;
+    .stat {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      flex-direction: column;
+      .stat-header {
+        font-size: calc(5px + .4rem);
+      }
+      div span {
+        font-size: 1.5rem;
+        color: $primary-color;
+      }
+      .stat-value {
+        display: inline-block;
+        font-size: 1.2rem;
+      }
+  }
+  }
+}
+
+
+
+
+
+
 .line-container {
-  min-height: 80px;
   margin: 25px 0;
   background: white;
   padding: 10px;

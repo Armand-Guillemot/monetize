@@ -8,7 +8,7 @@
           <p>Actif</p>
         </div>
       </div>
-      <a class="" href="/dashboard" target="_blank" >
+      <a class="" href="<%= user_product.affiliate_auto_connect_url%>" target="_blank" >
         <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-external-link"></i>Dashboard</div>
       </a>
     <% else %>
@@ -17,7 +17,7 @@
         <p>En attente de validation</p>
       </div>
     </div>
-    <a class="" href="/dashboard" target="_blank" >
+    <a class="" href="<%= new_admin_user_product_temp_path(user_product_temp: { user_product_id: user_product.id }) %>" >
       <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-plus"></i>Créer un accès</div>
     </a>
   <% end %>

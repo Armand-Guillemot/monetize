@@ -54,6 +54,8 @@ GEM
       kaminari (~> 1.0, >= 1.2.1)
       railties (>= 6.0, < 7.1)
       ransack (>= 2.1.1, < 4)
+    activeadmin_quill_editor (1.0.0)
+      activeadmin (~> 2.0)
     activejob (6.0.5.1)
       activesupport (= 6.0.5.1)
       globalid (>= 0.3.6)
@@ -104,6 +106,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -277,11 +283,13 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activeadmin_quill_editor
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   devise
+  dotenv-rails
   font-awesome-sass (~> 6.1)
   jbuilder (~> 2.7)
   listen (~> 3.2)

@@ -14,4 +14,10 @@ class PagesController < ApplicationController
 
   def social
   end
+
+  def link
+    user_product = UserProduct.find(params["user_product_id"])
+    user_product.link(10,10)
+    redirect_to admin_user_path(user_product.user)
+  end
 end
