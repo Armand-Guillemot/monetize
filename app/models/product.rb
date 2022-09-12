@@ -6,13 +6,13 @@ class Product < ApplicationRecord
   end
 
   def self.get_and_populate_data
-    Product.all.each do |product|
+    Product.where.not(external_url: nil).each do |product|
 
 
       linked_user_products = product.user_products.where(linked: true)
       external_ids = linked_user_products.map{|user_product| user_product.external_id }.to_json
 
-      uri = URI('http://localhost:3000/get_and_populate_data')
+      uri = URI(product.external_url + '/get_and_populate_data')
       res = Net::HTTP.post_form(uri, 'body' => external_ids, "api_key" => ENV['API_KEY'])
 
       if res.code == '200'
