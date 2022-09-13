@@ -12,7 +12,8 @@
       width: 100px;
       flex-direction: column;
       .stat-header {
-        font-size: calc(5px + .4rem);
+        font-size: calc(6px + .3rem);
+        color:$dark;
       }
       div span {
         font-size: 1.5rem;
