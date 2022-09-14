@@ -15,6 +15,7 @@
     <%= render "components/navbar" %>
     <%= yield %>
     <%= render "components/footer" %>
+    <%= render "components/calendly_badge", user: current_user %>
     <%= render "components/alerts_notices", notice: notice, alert: alert %>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

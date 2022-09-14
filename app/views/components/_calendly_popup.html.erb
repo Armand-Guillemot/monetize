@@ -1,0 +1,10 @@
+<% if user.present? %>
+  <% url = user.calendly_url %>
+<% else %>
+  <% url = "https://calendly.com/rdv_monetizee/finalisation?hide_gdpr_banner=1&primary_color=38aecc" %>
+<% end %>
+<!-- Début de widget de lien Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<a class="<%= classes %>" href="" onclick="Calendly.initPopupWidget({url: <%= url %>});return false;"><i class="fas fa-calendar-check" style="font-size:25px;"></i>Prendre RDV</a>
+<!-- Fin de widget de lien Calendly -->

@@ -18,9 +18,7 @@
           <p>Vérification en cours...</p>
         </div>
       </div>
-      <a class="" href="/dashboard" >
-        <div class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-calendar"></i>Prendre RDV</div>
-      </a>
+      <div  onclick="document.getElementsByClassName('calendly-badge-content')[0].click()" class="cta cta-sm" style="font-size:13px;"><i style="margin-right: 5px;" class="fas fa-calendar"></i>Prendre RDV</div>
     <% end %>
   </div>
   <% if user_product.status == 1 %>

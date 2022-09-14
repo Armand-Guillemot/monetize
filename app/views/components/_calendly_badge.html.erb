@@ -1,0 +1,12 @@
+<% if user.present? %>
+  <% url = user.calendly_url %>
+<% else %>
+  <% url = "https://calendly.com/rdv_monetizee/finalisation?hide_gdpr_banner=1&primary_color=38aecc" %>
+<% end %>
+<!-- Début de widget de badge Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">
+  window.onload = function() { Calendly.initBadgeWidget({ url: "<%= url %>", text: '<i class="fas fa-calendar-check" style="font-size:25px;"></i>', color: '#38aecc', textColor: '#ffffff', branding: false }); }
+</script>
+<!-- Fin de widget de badge Calendly -->

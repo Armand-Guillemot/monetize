@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
+  after_action :after_creating_user, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -43,6 +44,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:pseudo, :numero_de_telephone])
+  end
+
+  def after_creating_user
+    UserMailer.with(user: @user).welcome_email.deliver_now
   end
 
   # If you have extra params to permit, append them to the sanitizer.
