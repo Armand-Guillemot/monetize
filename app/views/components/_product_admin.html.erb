@@ -22,4 +22,76 @@
     </a>
   <% end %>
 </div>
+<% if user_product.status == 1 %>
+  <hr style="margin: 10px 0;">
+  <div class="stats-bar flex-around">
+    <div class="duo-stats flex-around">
+      <div class="stat">
+        <% visits = ["Visites", user_product.visits, "fa-mouse"] %>
+        <div class="stat-header"><%= visits[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= visits[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= visits[1] %></div>
+        </div>
+      </div>
+      <div class="stat">
+        <% inscriptions = ["Inscriptions", user_product.inscriptions, "fa-user"] %>
+        <div class="stat-header"><%= inscriptions[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= inscriptions[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= inscriptions[1] %></div>
+        </div>
+      </div>
+    </div>
+    <div class="duo-stats flex-around">
+      <div class="stat">
+        <% ventes = ["Ventes", user_product.ventes, "fa-user-check"] %>
+        <div class="stat-header"><%= ventes[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= ventes[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= ventes[1] %></div>
+        </div>
+      </div>
+      <div class="stat">
+        <% commissions = ["Ventes", number_to_currency(user_product.commissions/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+        <div class="stat-header"><%= commissions[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= commissions[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= commissions[1] %></div>
+        </div>
+      </div>
+    </div>
+    <div class="duo-stats flex-around">
+      <div class="stat">
+        <% commissions_pending = ["Commissions en attentes", number_to_currency(user_product.commissions_pending/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+        <div class="stat-header"><%= commissions_pending[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= commissions_pending[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= commissions_pending[1] %></div>
+        </div>
+      </div>
+      <div class="stat">
+        <% commissions_validated = ["Commissions validées", number_to_currency(user_product.commissions_validated/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+        <div class="stat-header"><%= commissions_validated[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= commissions_validated[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= commissions_validated[1] %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
 <% end %>
