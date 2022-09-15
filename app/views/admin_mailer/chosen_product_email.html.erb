@@ -1,0 +1,9 @@
+<hr>
+<h3><%= @user.pseudo %></h3>
+<% if @user.user_socials.present? %>
+  <% @user.user_socials.each do |user_social| %>
+    <p><%= user_social.social.title %> <% user_social.pseudo %></p>
+  <% end %>
+<% end %>
+<hr>
+<%= link_to("Go to user", admin_user_url(@user)) %>

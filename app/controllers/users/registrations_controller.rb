@@ -47,7 +47,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_creating_user
-    UserMailer.with(user: @user).welcome_email.deliver_now
+
+    if @user.id.present?
+      @user.update(numero_de_telephone: Phonelib.parse(@user.numero_de_telephone).international)
+      UserMailer.with(user: @user).welcome_email.deliver_now
+      AdminMailer.with(user: @user).welcome_email.deliver_now
+    end
+
   end
 
   # If you have extra params to permit, append them to the sanitizer.

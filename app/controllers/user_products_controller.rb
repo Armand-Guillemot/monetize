@@ -1,5 +1,6 @@
 class UserProductsController < ApplicationController
   before_action :set_user_product, only: %i[ show edit update destroy ]
+  after_action :after_creating_user_product, only: [:create]
 
   # GET /user_products or /user_products.json
   def index
@@ -57,6 +58,10 @@ class UserProductsController < ApplicationController
       format.html { redirect_to user_products_url, notice: "User product was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def after_creating_user_product
+    AdminMailer.with(user_product: @user_product).chosen_product_email.deliver_now
   end
 
   private
