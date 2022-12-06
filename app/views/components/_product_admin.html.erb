@@ -91,6 +91,28 @@
         </div>
       </div>
     </div>
+    <div class="duo-stats flex-around">
+      <div class="stat">
+        <% commissions_bonus = ["Bonus", number_to_currency(user_product.bonus/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+        <div class="stat-header"><%= commissions_bonus[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= commissions_bonus[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= commissions_bonus[1] %></div>
+        </div>
+      </div>
+      <div class="stat">
+        <% master_affiliate_commission = ["Master Affiliate", number_to_currency(user_product.master_affiliate_commission/100.0, unit: "€"), "fa-file-invoice-dollar"] %>
+        <div class="stat-header"><%= master_affiliate_commission[0] %></div>
+        <div>
+          <span>
+            <i class="fas <%= master_affiliate_commission[2] %>"></i>
+          </span>
+          <div class="stat-value"><%= master_affiliate_commission[1] %></div>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
 </div>
