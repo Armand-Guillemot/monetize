@@ -25,7 +25,9 @@ class Product < ApplicationRecord
             ventes: value[2],
             commissions: value[3],
             commissions_pending: value[4],
-            commissions_validated: value[5]
+            commissions_validated: value[5],
+            bonus: value[6],
+            master_affiliate_commission: value[7]
           )
         end
       end

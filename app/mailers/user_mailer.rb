@@ -1,5 +1,9 @@
 class UserMailer < ApplicationMailer
 
+  def test_email
+    mail(to: "armand.guillemot.56@gmail.com", subject: 'test')
+  end
+
   def welcome_email
     @user = params[:user]
     mail(to: @user.email, subject: 'Bienvenue chez Monetizee !')
