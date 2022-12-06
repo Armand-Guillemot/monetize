@@ -8,7 +8,7 @@
       align-items: flex-start;
       justify-content: center;
       height: 100px;
-      width: 100px;
+      width: 120px;
       flex-direction: column;
       .stat-header {
         font-size: calc(6px + .3rem);
@@ -20,7 +20,7 @@
       }
       .stat-value {
         display: inline-block;
-        font-size: 1rem;
+        font-size: .92rem;
       }
     }
   }

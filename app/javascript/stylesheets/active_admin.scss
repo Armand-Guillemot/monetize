@@ -18,22 +18,23 @@
 
 .active_admin {
 
-@media (max-width:1450px) {
+@media (max-width:1000px) {
   .under-line-container, .stats-bar {
     flex-direction: column;
     margin: 10px 0;
     gap:10px;
   }
-
+  .duo-stats {
+    flex-direction: row!important;
+  }
 }
 
 
 
 
 .stats-bar {
-  gap: 40px;
   .duo-stats {
-    gap: 20px;
+    flex-direction: column;
     .stat {
       display: flex;
       align-items: flex-start;
