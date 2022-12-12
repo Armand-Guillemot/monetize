@@ -33,5 +33,50 @@
         offset: 0, // offset (in px) from the original trigger point
       });
     </script>
+    <!-- first include tsParticles engine -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+    <!-- then include any tsParticles plugin needed -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles/tsparticles.bundle.min.js"></script>
+    <!-- then include jquery wrapper -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-particles"></script>
+
+    <script>
+      $(document).ready(async function () {
+    await loadFull(tsParticles);
+        
+    $("#tsparticles")
+        .particles()
+        .init(
+          {
+            fullScreen: {
+    enable: false,
+    zIndex: -1
+  },
+
+    fpsLimit: 60,
+    particles: {
+      color: {
+        value: "#000"
+      },
+      links: {
+        enable: true,
+        color: "#000"
+      },
+      move: {
+        enable: true
+      }
+    }
+  },
+            function (container) {
+                // container is the particles container where you can play/pause or stop/start.
+                // the container is already started, you don't need to start it manually.
+            }
+        );
+
+    // or
+
+
+});
+    </script>
   </body>
 </html>

@@ -18,5 +18,3 @@ require("channels")
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 
-
-
