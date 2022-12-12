@@ -105,14 +105,20 @@ $section-padding: 70px;
 }
 
 /* ---- tsparticles container ---- */
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
 #tsparticles {
   position: absolute;
   width: 100%;
   height: calc(100vh - #{$navbar-height});
+  background-color: white;
+  background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  
 }
 
 .section-tsparticles {

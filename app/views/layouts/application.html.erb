@@ -33,6 +33,8 @@
         offset: 0, // offset (in px) from the original trigger point
       });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-plugin-polygon-mask@2.6.0/tsparticles.plugin.polygon-mask.min.js"></script>
     <!-- first include tsParticles engine -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
     <!-- then include any tsParticles plugin needed -->
@@ -43,37 +45,127 @@
     <script>
       $(document).ready(async function () {
     await loadFull(tsParticles);
+    await loadPolygonMaskPlugin(tsParticles);
         
+
     $("#tsparticles")
         .particles()
         .init(
           {
-            fullScreen: {
-    enable: false,
-    zIndex: -1
+  detectRetina: false,
+  fpsLimit: 60,
+  "fullScreen": {
+    "enable": false,
+    "zIndex": -1
   },
 
-    fpsLimit: 60,
-    particles: {
-      color: {
-        value: "#000"
-      },
-      links: {
+  interactivity: {
+    detectsOn: "canvas",
+    events: {
+      onHover: {
         enable: true,
-        color: "#000"
+        mode: "bubble"
       },
-      move: {
-        enable: true
+      resize: true
+    },
+    modes: {
+      bubble: {
+        distance: 40,
+        duration: 2,
+        opacity: 8,
+        size: 6,
+        speed: 3
       }
     }
   },
+  particles: {
+    color: {
+      value: "#38aecc",
+      animation: {
+        enable: false,
+        speed: 20,
+        sync: true
+      }
+    },
+    lineLinked: {
+      blink: false,
+      color: "#38aecc",
+      consent: false,
+      distance: 30,
+      enable: true,
+      opacity: 0.3,
+      width: 0.5
+    },
+    move: {
+      attract: {
+        enable: false,
+        rotate: {
+          x: 600,
+          y: 1200
+        }
+      },
+      bounce: false,
+      direction: "none",
+      enable: true,
+      outMode: "bounce",
+      random: true,
+      speed: 0.5,
+      straight: false
+    },
+    number: {
+      density: {
+        enable: false,
+        area: 2000
+      },
+      limit: 0,
+      value: 200
+    },
+    opacity: {
+      animation: {
+        enable: true,
+        minimumValue: 0.05,
+        speed: 2,
+        sync: false
+      },
+      random: false,
+      value: 1
+    },
+    shape: {
+      type: "circle"
+    },
+    size: {
+      animation: {
+        enable: false,
+        minimumValue: 0.1,
+        speed: 40,
+        sync: false
+      },
+      random: true,
+      value: 1
+    }
+  },
+  polygon: {
+    draw: {
+      enable: true,
+      lineColor: "rgba(0,0,0,0.5)",
+      lineWidth: 1
+    },
+    move: {
+      radius: 10
+    },
+    inlineArrangement: "equidistant",
+    scale: .5,
+    type: "inline",
+    url: "https://particles.js.org/images/smalldeer.svg"
+  }
+},
             function (container) {
                 // container is the particles container where you can play/pause or stop/start.
                 // the container is already started, you don't need to start it manually.
             }
         );
 
-    // or
+        
 
 
 });
