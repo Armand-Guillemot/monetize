@@ -2,6 +2,12 @@
   display:flex;
   align-items: center;
   justify-content: center;
+  img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e5e5dd;
+    padding: 16px;
+  }
 }
 
 
@@ -76,7 +82,6 @@
 }
 
 .slider:hover > div {
-    transform: scale(1.01);
 }
 
 .hoverZoomOff:hover > div {
@@ -201,7 +206,7 @@
 /* -------------------------------------- */
 
 #slider2 {
-    max-width: 500px;
+    max-width: 350px;
     width:100%;
 }
 

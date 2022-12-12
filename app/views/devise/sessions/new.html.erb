@@ -1,21 +1,29 @@
 <div class="flex-center form-outer-container">
   <div class="form-container">
-    <h5>Connexion</h5>
-    <div class="section-spacer card-spacer"></div>
+    <div class="form-header">
+      <img style="width: 53%;margin: 5px auto;display: block;" src="/logosq.png" alt="">
+    </div>
+    <!-- <div class="section-spacer card-spacer"></div> -->
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
-        <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
+        <div data-aos="fade-up" data-aos-delay="600" class="upper-form-group email">
+          <%= f.input :email,
+          label: false,
+          placeholder: "Adresse email",
+                required: true,
+                input_html: { class: "form-email",autocomplete: "email" }%>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="700" class="upper-form-group password">
+          <%= f.input :password,
+          label: false,
+          placeholder: "Mot de passe",
+                required: true,
+                input_html: { class: "form-pw",autocomplete: "new-password" } %>
+        </div>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
-      <div class="spacer"></div>
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", class:"cta cta-sm" %>
+      <div class="form-actions flex-center">
+        <%= f.button :submit, "Connexion", class:"cta cta-sm" %>
       </div>
       <p style="font-size: 12px;text-align: center;margin-top: 7px;">Pour vous inscrire, cliquez <u><a href="/inscription">ici</a></u></p>
     <% end %>

@@ -1,18 +1,23 @@
 <div class="product-card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-  <div class="header flex-center">
-    <img class="header-brand" src="<%= brand %>" alt="">
+  <div style="width:100%">
+    <div class="header flex-center">
+      <img class="header-brand" src="<%= brand %>" alt="">
+    </div>
+    <div class="section-spacer card-spacer"></div>
   </div>
-  <div class="section-spacer card-spacer"></div>
+
   <div class="body flex-center">
-    <h5 class="title">
+    <!-- <h5 class="title">
       <%= title %>
-    </h5>
-    <p class="description">`
+    </h5> -->
+    <div style="" class="description">
       <%= description %>
-    </p>
-    <a href="#" class="cta"><%= cta %></a>
+    </div>
+    <a class="cta" style="text-decoration:none;"><%= cta %></a>
   </div>
-  <div class="section-spacer card-spacer"></div>
+
+  <div style="width:100%;">
+    <div class="section-spacer card-spacer"></div>
   <div class="footer flex-center">
     <div class="status flex-center">
       <% if status == 0 %>
@@ -26,5 +31,6 @@
         <h5 class="m-0"><%= Product.statuses[status] %></h5>
       <% end %>
     </div>
+  </div>
   </div>
 </div>

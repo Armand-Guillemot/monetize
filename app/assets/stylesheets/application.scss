@@ -66,24 +66,24 @@ h1 {
   font-family: $headers-font;
   line-height: 1.2;
   font-weight: bold;
-  font-size: calc(10px + (0.390625vw * 12) );
+  font-size: calc(30px + (0.390625vw * 12) );
 
 
 
 
-  &:after {
-    position: absolute;
-    content: '';
-    height: calc(0.5vw + 10px);
-    width: 101%;
-    background: $primary-color;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 1.8vw);
-    z-index: -1;
-    // box-shadow:  $inset;
-    border-radius:5px;
-  }
+  // &:after {
+  //   position: absolute;
+  //   content: '';
+  //   height: calc(0.5vw + 10px);
+  //   width: 101%;
+  //   background: $primary-color;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, 1.8vw);
+  //   z-index: -1;
+  //   // box-shadow:  $inset;
+  //   border-radius:5px;
+  // }
 }
 
 
