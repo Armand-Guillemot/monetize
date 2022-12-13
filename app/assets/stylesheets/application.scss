@@ -61,7 +61,7 @@ h1 {
   position:relative;
 
   text-align: center;
-  text-shadow: .2vw .2vw 0px $primary-color;
+  text-shadow: 2px 2px 0px $primary-color;
   color: $dark;
   font-family: $headers-font;
   line-height: 1.2;
@@ -130,9 +130,9 @@ h5 {
 p {
   color: $text-color;
   font-family: $body-font;
-  font-size: .95rem;
+  font-size: 1rem;
   &.small {
-    font-size: .8rem;
+    font-size: .85rem;
   }
 }
 
