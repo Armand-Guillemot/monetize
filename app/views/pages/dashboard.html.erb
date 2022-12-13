@@ -20,9 +20,14 @@
               <i class="fas fa-envelope"></i>
               <p><%= current_user.email %></p>
             </div>
-            <div class="dash-phone mb-4 flex-start">
+ 
+            <div class="dash-phone mb-2 flex-start">
               <i class="fas fa-phone"></i>
               <p><%= current_user.numero_de_telephone %></p>
+            </div>
+            <div class="dash-email mb-4 flex-start">
+              <i class="fas fa-link"></i>
+              <p><%= current_user.master_affiliate_bitly %></p>
             </div>
             <div class="validation">
               <% if current_user.confirmed %>

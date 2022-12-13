@@ -49,7 +49,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_creating_user
 
     if @user.id.present?
-      @user.update(numero_de_telephone: Phonelib.parse(@user.numero_de_telephone).international)
+      master_affiliate_url = root_url + "?ref=#{@user.id}"
+      master_affiliate_bitly = Rails.env.development? ? master_affiliate_url : Bitly::API::Client.new(token: ENV["BITLY_TOKEN"]).shorten(long_url: master_affiliate_url).link
+      @user.update(numero_de_telephone: Phonelib.parse(@user.numero_de_telephone).international, master_affiliate_url: master_affiliate_url, master_affiliate_bitly: master_affiliate_bitly)
+      @user.update(master_affiliate: User.find_by(id: cookies.signed[:ref])) if cookies.signed[:ref].present?
+      
       UserMailer.with(user: @user).welcome_email.deliver_now
       AdminMailer.with(user: @user).welcome_email.deliver_now
     end

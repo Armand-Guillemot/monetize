@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :cta
+  before_action :cookie_jar
   private
+
+  def cookie_jar
+    if !current_user.present? && params["ref"].present? && User.find_by(id: params["ref"]).present?
+      cookies.signed[:ref] = { :value => params["ref"], :expires => DateTime.now + 1.month}
+    end
+  end
 
   def cta
     if current_user

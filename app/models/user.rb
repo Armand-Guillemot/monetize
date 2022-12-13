@@ -4,7 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :trackable
 
+    
+ 
   has_many :user_socials
+
+  belongs_to :master_affiliate, class_name: 'User', optional: true
+  has_many :sub_affiliates, class_name: 'User', foreign_key: 'master_affiliate_id'
+
   accepts_nested_attributes_for :user_socials
   has_many :user_products
   accepts_nested_attributes_for :user_products

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_06_224526) do
+ActiveRecord::Schema.define(version: 2022_12_13_013602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,7 +123,11 @@ ActiveRecord::Schema.define(version: 2022_12_06_224526) do
     t.boolean "step_1"
     t.boolean "step_2"
     t.boolean "confirmed"
+    t.bigint "master_affiliate_id"
+    t.string "master_affiliate_url"
+    t.string "master_affiliate_bitly"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["master_affiliate_id"], name: "index_users_on_master_affiliate_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
