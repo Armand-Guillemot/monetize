@@ -6,6 +6,12 @@
 <!-- /HERO -->
 <div class="section-spacer">
 </div>
+<!-- COMMENT CA MARCHE ? -->
+<div id="section-pre-2" class="section section-pre-2">
+  <%= render "sections/section_2_pre" %>
+</div>
+<!-- /COMMENT CA MARCHE ? -->
+<div class="section-spacer reverse"></div>
 <!-- AVANTAGES -->
 <div id="section-2" class="section section-2">
   <%= render "sections/section_2" %>
@@ -13,11 +19,11 @@
 <!-- /AVANTAGES -->
 <div class="section-spacer">
 </div>
-<!-- COMMENT CA MARCHE -->
+<!-- COMMENT COMMENCER -->
 <div id="section-3" class="section section-3">
   <%= render "sections/section_3" %>
 </div>
-<!-- /COMMENT CA MARCHE -->
+<!-- /COMMENT COMMENCER -->
 <div class="section-spacer primary-section-spacer">
 </div>
 <!-- CATALOGUE -->
@@ -25,9 +31,11 @@
   <%= render "sections/section_4" %>
 </div>
 <!-- /CATALOGUE -->
+<div class="section-spacer reverse"></div>
 <!-- RETOURS -->
 <div id="section-5" class="section section-5">
   <%= render "sections/section_5" %>
+  
 </div>
 <!-- /RETOURS -->
 <div class="section-spacer">
@@ -42,6 +50,7 @@
 <!-- LAST -->
 <div id="section-7" class="section section-7">
   <%= render "sections/section_7" %>
+  <div id="tsparticles-2"></div>
 </div>
 <!-- /LAST -->
 <%= javascript_pack_tag "home_aos" %>

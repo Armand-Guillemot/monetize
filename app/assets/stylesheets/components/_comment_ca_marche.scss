@@ -1,8 +1,23 @@
 .ccm-container {
-  gap:50px;
+
+
+  .link {
+    height: 100%;
+    hr {
+      width: 50px;
+      border-top: 4px dashed #38aecc;
+      opacity: 1;
+    }
+
+  }
+
+  .text-prim {
+    color: #38aecc;
+    font-weight: bold;
+  }
 
   .step{
-    width: 200px;
+    width: 250px;
     gap:15px;
     display: flex;
     align-items: center;
@@ -10,32 +25,48 @@
     flex-direction: column;
     h5{
       text-align: center;
-      font-weight: bold;
+      font-weight: 400;
+      /* max-width: 335px; */
+      position: absolute;
+      top: 66%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      font-size: 1rem;
     }
 
     .step-box {
+      transition: all .1s ease-in-out; 
+      box-shadow: none;
+      z-index: 10;
+      &:hover {
+        transform: scale(1.05);
+      }
       position: relative;
-      height: 150px;
-      width:  150px;
-      background: $primary-color;
-      border-radius: 12px;
-      box-shadow:  $inset;
+      height: 250px;
+      width: 250px;
+      border-radius: 500px;
+      border:1px solid #38aecc;
+      background:white;
       .number-container {
-        position:absolute;
-        top: 7.5%;
+        position: absolute;
+        top: 0;
         left: 50%;
-        background:white;
-        color: $dark;
-        height: 25%;
-        width: 25%;
-        border-radius:20px;
-        transform: translateX(-50%);
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        background: #38aecc;
+        color: white;
+        height: 17.5%;
+        width: 17.5%;
+        border-radius: 200px;
+        transform: translate(-50%, -50%);
+        div {
+          font-weight: 400!important;
+          font-size: 18px;
+        }
       }
       img {
         height: 80px;
         position: absolute;
-        top: 65%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
@@ -47,9 +78,13 @@
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:1200px) {
   .ccm-container {
     flex-direction: column;
     align-items: center!important;
+  }
+  .link {
+    transform: rotate(90deg);
+    height: 50px!important;
   }
 }

@@ -1,36 +1,93 @@
-<div class="product-card col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-  <div style="width:100%">
+<div class="product-card ">
+  <div class="over-product-card">
+
+  <!-- <div style="width:100%">
     <div class="header flex-center">
-      <img class="header-brand" src="<%= brand %>" alt="">
+      <img class="header-brand" src="<%= product.logo %>" alt="">
     </div>
     <div class="section-spacer card-spacer"></div>
-  </div>
-
+  </div> -->
+  
   <div class="body flex-center">
-    <!-- <h5 class="title">
-      <%= title %>
-    </h5> -->
+
     <div style="" class="description">
-      <%= description %>
+      <div style="   font-size: 1.2rem;
+      font-weight: bold!important;
+      margin-bottom: 15px;" class="title">
+         <img style="width: 80%;
+         display: block;margin:0!important;" src="<%= product.logo %>" alt="">
+      </div>
+      <%= raw(product.description) %>
     </div>
-    <a class="cta" style="text-decoration:none;"><%= cta %></a>
+    <div>
+      <div class="right-card flex-center" style="flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;">
+        <div class="product-tags-container" style="margin-bottom:5px;">
+  
+          <% product.tags.each do |tag| %>
+            <div class="product-tag">
+              <i class='<%= tag.font_icon %>'></i>
+              <p><%= tag.title %></p>
+            </div>
+          <% end %>
+        </div>
+        <div style="margin-top:5px;font-size:.9rem" class="cta">Jusqu'à <%= number_to_currency(product.max_price/10, unit: "€") if product.max_price %> par vente !</div>
+      </div>
+    </div>
+
+    
+
+
+
   </div>
+  <div class="under-tag-container">
+    <% if product.product_type.present? %>
+    <div class="under-tag">
+      <%= product.product_type %>
+    </div>
+    <% end %>
+    <% if product.domaine.present? %>
+    <div class="under-tag">
+      <%= product.domaine %>
+    </div>
+    <% end %>
+    <% if product.has_marketing %>
+    <div class="under-tag">
+      Contenu Marketing
+    </div>
+    <% end %>
+    <% if product.bonus %>
+    <div class="under-tag">
+      Bonus
+    </div>
+    <% end %>
+    <% if product.cpf %>
+    <div class="under-tag">
+      CPF
+    </div>
+    <% end %>
+
+  </div>
+  
 
   <div style="width:100%;">
     <div class="section-spacer card-spacer"></div>
   <div class="footer flex-center">
     <div class="status flex-center">
-      <% if status == 0 %>
+      <% if product.status == 0 %>
         <div class="dot" style="background:orange;"></div>
-        <h5 class="m-0"><%= Product.statuses[status] %></h5>
-      <% elsif status == 1 %>
+        <h5 class="m-0"><%= Product.statuses[product.status] %></h5>
+      <% elsif product.status == 1 %>
         <div class="dot" style="background:green;"></div>
-        <h5 class="m-0"><%= Product.statuses[status] %></h5>
-      <% elsif status == 2 %>
+        <h5 class="m-0"><%= Product.statuses[product.status] %></h5>
+      <% elsif product.status == 2 %>
         <div class="dot" style=""></div>
-        <h5 class="m-0"><%= Product.statuses[status] %></h5>
+        <h5 class="m-0"><%= Product.statuses[product.status] %></h5>
       <% end %>
     </div>
+  </div>
   </div>
   </div>
 </div>

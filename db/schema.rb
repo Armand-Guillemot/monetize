@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_13_013602) do
+ActiveRecord::Schema.define(version: 2022_12_15_171616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(version: 2022_12_13_013602) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "external_url"
+    t.string "product_type"
+    t.string "domaine"
+    t.integer "min_price"
+    t.integer "max_price"
+    t.boolean "has_marketing"
   end
 
   create_table "socials", force: :cascade do |t|
@@ -63,6 +68,15 @@ ActiveRecord::Schema.define(version: 2022_12_13_013602) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.string "title"
+    t.string "font_icon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_tags_on_product_id"
   end
 
   create_table "user_product_temps", force: :cascade do |t|
@@ -131,6 +145,7 @@ ActiveRecord::Schema.define(version: 2022_12_13_013602) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tags", "products"
   add_foreign_key "user_product_temps", "user_products"
   add_foreign_key "user_products", "products"
   add_foreign_key "user_products", "users"

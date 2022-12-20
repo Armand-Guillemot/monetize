@@ -5,7 +5,7 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :logo, :icon, :description, :content, :rem, :marketing, :criterion, :status, :bonus, :cpf, :external_url
+  permit_params :title, :product_type, :domaine,:min_price, :max_price, :has_marketing, :logo, :icon, :description, :content, :rem, :marketing, :criterion, :status, :bonus, :cpf, :external_url, tags_attributes: [:id, :title, :font_icon, :_destroy ]
   #
   # or
   #
@@ -30,19 +30,36 @@ ActiveAdmin.register Product do
   end
 
   show do
-    attributes_table title: "Info Principal" do
-      row :title
-      row "Status" do |product|
-        Product.statuses[product.status]
+    columns do
+      column do
+        attributes_table title: "Info Principal" do
+          row :title
+          row :logo
+          row :icon
+          row :external_url
+          row "Status" do |product|
+            Product.statuses[product.status]
+          end
+          row :product_type
+        end
       end
-      row :external_url
-      row :bonus
-      row :cpf
+      column do
+        attributes_table title: "Info Principal" do
+          row "Minimum", :min_price do |product|
+            number_to_currency(product.min_price, unit: "€")
+          end
+          row "Maximum", :max_price do |product|
+            number_to_currency(product.max_price, unit: "€")
+          end
 
-      row :icon
-      row :logo
-
+          row :domaine
+          row :has_marketing
+          row :bonus
+          row :cpf
+        end
+      end
     end
+
 
     tabs do
       tab "Description" do
@@ -50,45 +67,32 @@ ActiveAdmin.register Product do
           row "Description" do
             product.description.html_safe
           end
-        end
-
-      end
-
-      tab "Content" do
-        attributes_table title: "" do
           row "Content" do
             product.content.html_safe
           end
-        end
-
-      end
-
-      tab "Rem" do
-        attributes_table title: "" do
           row "Rem" do
             product.rem.html_safe
           end
-        end
-
-      end
-
-      tab "Marketing" do
-        attributes_table title: "" do
           row "Marketing" do
             product.marketing.html_safe
           end
-        end
-
-      end
-
-      tab "Criterion" do
-        attributes_table title: "" do
           row "Criterion" do
             product.criterion.html_safe
           end
         end
 
       end
+
+      tab "Tags" do
+        table_for product.tags do
+          column "Icon", :font_icon do |tag|
+            raw("<i class='#{tag.font_icon}'></i>")
+          end
+          column :title
+        end
+
+      end
+
     end
 
 
@@ -108,28 +112,47 @@ ActiveAdmin.register Product do
 
 
   form do |f|
-    inputs do
-      input :title
-      input :logo
-      input :icon
-      input :external_url
-      input :status, as: :select, collection: Product.statuses.to_a.map { |e| e.reverse()  }
+
+      columns do
+        column do
+          inputs do
+            input :title
+            input :logo
+            input :icon
+            input :external_url
+            input :status, as: :select, collection: Product.statuses.to_a.map { |e| e.reverse()  }
+
+      
+            end
+        end
+        column do
+          inputs do
+            input :min_price
+            input :max_price
+            input :product_type
+            input :domaine
+            input :has_marketing
+            input :bonus
+            input :cpf
+            end
+        end
+      end
       tabs do
-        tab "Description" do
+        tab "Catalogue" do
           input :description, as: :quill_editor, label: false
-        end
-        tab "Content" do
           input :content, as: :quill_editor, label: false
-        end
-        tab "Rem" do
           input :rem, as: :quill_editor, label: false
-        end
-        tab "Marketing" do
           input :marketing, as: :quill_editor, label: false
-        end
-        tab "Criterion" do
           input :criterion, as: :quill_editor, label: false
         end
+        tab "Tags" do
+          f.has_many :tags do |tag|
+            tag.inputs do
+              tag.input :title
+              tag.input :font_icon
+            end
+        end
+       
       end
 
 

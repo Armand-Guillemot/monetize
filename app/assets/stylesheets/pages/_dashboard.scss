@@ -1,5 +1,46 @@
 .dashboard-section {
   padding: 70px 10px;
+  .social-image-container a {
+    display:none;
+  }
+
+
+
+  .validation {
+    .account-validation-status {
+        height: 15px;
+        width:15px;
+        background-color: $green;
+        margin-right:10px;
+        border-radius: 50%;
+    }
+
+    .validation-content {
+      margin-left:25px;
+
+      .validation-status {
+        height: 10px;
+        width:10px;
+        background-color: $green;
+        margin-right:5px;
+        border-radius: 50%;
+        &.nok {
+          background-color: $orange;
+        }
+      }
+    }
+  }
+
+
+  .sub-affiliate-line { 
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background: white;
+ 
+
+  }
 
 
   max-width: 1000px;
@@ -66,9 +107,10 @@
   }
 
   @media (max-width:900px) {
-  .profil-socials-container, .content-container  {
+  .profil-socials-container, .content-container, .bi-header, .acc-inner  {
     flex-direction:column;
   }
+
 
   .affiliate-manager {
     display: flex;
@@ -115,9 +157,7 @@
     }
     .socials {
         min-width:calc(50% - 10px);
-        .social-image-container a {
-          display:none;
-        }
+
     }
   }
 

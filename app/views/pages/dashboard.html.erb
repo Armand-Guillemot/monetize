@@ -2,7 +2,6 @@
   <div>
     <div class="">
       <h2>Mon Dashboard</h2>
-      <h4>Suivez les trois étapes expliquées ci-dessous:</h4>
     </div>
     <div class="spacer"></div>
     <div class="dashboard-content">
@@ -25,10 +24,7 @@
               <i class="fas fa-phone"></i>
               <p><%= current_user.numero_de_telephone %></p>
             </div>
-            <div class="dash-email mb-4 flex-start">
-              <i class="fas fa-link"></i>
-              <p><%= current_user.master_affiliate_bitly %></p>
-            </div>
+
             <div class="validation">
               <% if current_user.confirmed %>
                 <div class="flex-start mb-2">
@@ -70,7 +66,7 @@
             <a class="cta" style="padding: 5px 12px;" href="/social">+</a>
           </div>
           <div id="social">
-            <% UserSocial.where(user: current_user).each do |user_social| %>
+            <% current_user.user_socials.each do |user_social| %>
               <%= render "components/user_social", user_social: user_social %>
             <% end %>
           </div>
@@ -86,6 +82,22 @@
       <div class="dashboard-panel pending-products">
         <h5>Mes Produits en validation</h5>
         <%= render "components/product_dashboard", user_products: current_user.user_products.where(status:0) %>
+      </div>
+      <div class="dashboard-panel">
+        <div class="flex-between bi-header">
+          <h5>Mes sous-affiliés</h5>
+          <div class="dash-email flex-start" style="gap:5px;">
+            <i class="fas fa-link"></i>
+            <p><%= current_user.master_affiliate_url %></p>
+          </div>
+        </div>
+        <div class="dashboard-panel-content" style="padding:0!important;margin-top:20px">
+          <%= render "components/sub_line" %>
+        </div>
+
+    
+       
+
       </div>
       <div class="spacer"></div>
       <div class="flex-center">

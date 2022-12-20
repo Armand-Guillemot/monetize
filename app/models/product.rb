@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
   has_many :user_products
+  has_many :tags
+  accepts_nested_attributes_for :tags, allow_destroy: true
 
   def self.statuses
     {0 => "Victime de son succès", 1 => "Disponible", 2 => "Bientôt disponible"}

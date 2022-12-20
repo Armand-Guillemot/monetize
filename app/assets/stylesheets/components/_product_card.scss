@@ -1,10 +1,27 @@
+.over-product-card {
+  background-image: url('background_home.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .product-card{
+  .watermark {
+    width:40px;
+    position: absolute;
+    top: 0;
+    right:0;
+  }
+
  &:hover {
   transform: translateY(-5px);
  }
+  overflow:hidden;
   transition: transform .16s ease-in-out;
-  width:calc(260px + 2vw);
-  background: white;
+  // width:calc(300px + 2vw);
+  background:white;
   border-radius:12px;
   padding: 0;
   box-shadow:$outset;
@@ -12,7 +29,10 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-
+  position:relative;
+  width: 90vw;
+  max-width: 600px;
+  margin: 10px auto;
 
   .header {
     height:65px;
@@ -22,22 +42,71 @@
       max-height: 70%;
     }
   }
+  .under-tag-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    margin: 5px 20px;
+    .under-tag {
+      margin: 5px 4px;
+      background: #e3ebf7;
+      border-radius: 8px;
+      padding: 3px 8px 4px;
+      color: #285192;
+      font-weight: 500;
+      user-select: none;
+      border: 1px solid #e3ebf7;
+      transition-duration: 0.25s;
+      white-space: nowrap;
+      font-size: .8rem;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .description{width:100%!important;}
+    .body {flex-direction:column;align-items: center!important;}
+  }
   .body {
     padding: 20px;
-    flex-direction:column;
+    // flex-direction:column;
     gap: 15px;
     justify-content: space-between;
-    height: 100%;
-    .title{
+    align-items: self-end;
 
+
+    .product-tags-container { 
+      display: inline-block;
+      .product-tag {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        >i {
+          
+          color:#38aecc;
+        }
+        >p {
+          font-size: .9rem;
+          font-weight: 400 !important;
+          max-width: 100%;
+          color: #59595f;
+          font-family: "Work Sans", "Helvetica", "sans-serif";
+        }
+
+      }
     }
+    .title{
+   
+    }
+    .description{width:50%;padding: 0 10px;}
     .description > * {
       font-size:.9rem;
       font-weight: 400!important;
       max-width: 100%;
       color: #59595f;
       font-family: "Work Sans", "Helvetica", "sans-serif";
-      text-align: center;
+      text-align: left;
       >* {
         color: #59595f;
         font-family: "Work Sans", "Helvetica", "sans-serif";

@@ -1,0 +1,61 @@
+<% current_user.sub_affiliates.each do |sub_affiliate| %>
+<div class="acc-container">
+  <button class="accordion">
+    <div class="sub-affiliate-line">
+      <div class="flex-center" style="gap:20px;">
+        <div class="title">
+          <div class="dash-email flex-start" style="gap:5px; margin-right:10px">
+            <div class="validation">
+              <% if sub_affiliate.confirmed %>
+                <div class="flex-start">
+                  <div class="account-validation-status"></div>
+      
+                </div>
+              <% else %>
+                <div class="spinner-container flex-start">
+                  <div class="verification-spinner"></div>
+       
+                </div>
+              <% end %>
+            </div>
+            <p style="text-transform: capitalize"><%= sub_affiliate.pseudo %></p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  </button>
+  <div class="accordion-content">
+    <div class="acc-inner" style="margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:15px;">
+      <div class="accordion-left">
+        <div class="dash-email mb-2 flex-start">
+          <i class="fas fa-envelope"></i>
+          <p><%= sub_affiliate.email %></p>
+        </div>
+
+        <div class="dash-phone mb-2 flex-start">
+          <i class="fas fa-phone"></i>
+          <p><%= sub_affiliate.numero_de_telephone %></p>
+        </div>
+      </div>
+      <div class="accordion-middle" style="">
+        <% sub_affiliate.user_socials.each do |user_social| %>
+          <%= render "components/user_social", user_social: user_social %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% end %>
+
+<%= javascript_pack_tag "sub_line" %>
+
+
+
+
+
+
+
+
+
