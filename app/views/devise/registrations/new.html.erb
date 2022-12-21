@@ -1,7 +1,7 @@
 <div class="flex-center form-outer-container">
-  <div data-aos="fade" style="position:relative;" class="form-container">
-    <div id="tsparticles-3"></div>
-    <div class="form-header">
+  <div data-aos="fade" style="position:relative;overflow:hidden;" class="form-container">
+
+    <div class="form-header" style="z-index: 10;position:relative">
       <img style="width: 53%;margin: 5px auto;display: block;" src="/logosq.png" alt="">
       <div class="flex-center">
         <%= render "components/steps", step: 1 %>
@@ -50,10 +50,10 @@
         </div>
       </div>
       <div class="spacer spacer-sm"></div>
-      <div class="form-actions flex-center">
+      <div class="form-actions flex-center" style="z-index: 10;position:relative">
         <%= f.button :submit, "S'inscrire", class:"cta cta-sm" %>
       </div>
-      <p style="font-size: 12px;text-align: center;margin-top: 7px;">Si vous avez déjà un compte, cliquez <u><a href="/connexion">ici</a></u></p>
+      <p style="font-size: 12px;text-align: center;margin-top: 7px;z-index: 10;position:relative">Si vous avez déjà un compte, cliquez <u><a href="/connexion">ici</a></u></p>
     <% end %>
   </div>
 </div>
