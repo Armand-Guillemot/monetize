@@ -7,6 +7,7 @@ class User < ApplicationRecord
     
  
   has_many :user_socials
+  has_many :visits, class_name: "Ahoy::Visit"
 
   belongs_to :master_affiliate, class_name: 'User', optional: true
   has_many :sub_affiliates, class_name: 'User', foreign_key: 'master_affiliate_id'

@@ -1,31 +1,49 @@
+<style>
+  .user_remember_me { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-check-input:checked {
+    background-color: #38aecc;
+    border-color: #38aecc;
+}
+.form-outer-container .form-container .simple_form label {
+  font-size: 12px;
+    text-align: center;
+}
+</style>
 <div class="flex-center form-outer-container">
-  <div class="form-container">
+  <div class="form-container" data-aos="fade-up">
     <div class="form-header">
       <img style="width: 53%;margin: 5px auto;display: block;" src="/logosq.png" alt="">
     </div>
     <!-- <div class="section-spacer card-spacer"></div> -->
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
-        <div data-aos="fade-up" data-aos-delay="600" class="upper-form-group email">
+        <div data-aos-delay="600" class="upper-form-group email">
           <%= f.input :email,
           label: false,
           placeholder: "Adresse email",
                 required: true,
                 input_html: { class: "form-email",autocomplete: "email" }%>
         </div>
-        <div data-aos="fade-up" data-aos-delay="700" class="upper-form-group password">
+        <div data-aos-delay="700" class="upper-form-group password">
           <%= f.input :password,
           label: false,
           placeholder: "Mot de passe",
                 required: true,
                 input_html: { class: "form-pw",autocomplete: "new-password" } %>
         </div>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.input :remember_me, as: :boolean, input_html: {} if devise_mapping.rememberable? %>
       </div>
       <div class="form-actions flex-center">
         <%= f.button :submit, "Connexion", class:"cta cta-sm" %>
       </div>
-      <p style="font-size: 12px;text-align: center;margin-top: 7px;">Pour vous inscrire, cliquez <u><a href="/inscription">ici</a></u></p>
     <% end %>
+    <div class="spacer spacer-sm"></div>
+    <p style="font-size: 12px;text-align: center;margin-top: 7px;">Pour vous inscrire, cliquez <u><a href="/inscription">ici</a></u></p>
+    <p style="font-size: 12px;text-align: center;margin-top: 7px;">Pour réinitialiser votre mot de passe, cliquez <u><%= link_to "ici", new_password_path(resource_name) %></u></p>
+    <div class="spacer spacer-sm"></div>
   </div>
 </div>
