@@ -1,18 +1,32 @@
-<h2>Forgot your password?</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+<div class="flex-center form-outer-container">
+  <div data-aos="fade-up" class="form-container">
+    <div class="form-header">
+      <img style="width: 53%;margin: 5px auto;display: block;" src="/logosq.png" alt="">
+    </div>
+    <!-- <div class="section-spacer card-spacer"></div> -->
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
+  
+    <div class="form-inputs">
+              <div class="upper-form-group email">
+            <%= f.input :email,
+            label: false,
+            placeholder: "Adresse email",
+                  required: true,
+                  input_html: { class: "form-email",autocomplete: "email" }%>
+          </div>
+   
+    </div>
+  
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+    <div class="form-actions flex-center">
+      <%= f.button :submit, "Réinitialisation", class:"cta cta-sm" %>
+    </div>
+  <% end %>
+  <div class="spacer spacer-sm"></div>
+  <p style="font-size: 12px;text-align: center;margin-top: 7px;">Pour vous inscrire, cliquez <u><a href="/inscription">ici</a></u></p>
+  <p style="font-size: 12px;text-align: center;margin-top: 7px;z-index: 10;position:relative">Si vous avez déjà un compte, cliquez <u><a href="/connexion">ici</a></u></p>
+  <div class="spacer spacer-sm"></div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

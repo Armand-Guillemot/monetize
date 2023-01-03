@@ -77,6 +77,10 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ahoy_matey (4.1.0)
+      activesupport (>= 5.2)
+      device_detector
+      safely_block (>= 0.2.1)
     arbre (1.5.0)
       activesupport (>= 3.0.0, < 7.1)
       ruby2_keywords (>= 0.0.2, < 1.0)
@@ -102,6 +106,7 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    device_detector (1.0.7)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -112,6 +117,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    errbase (0.2.2)
     erubi (1.10.0)
     execjs (2.8.1)
     faraday (1.8.0)
@@ -252,6 +258,8 @@ GEM
     rexml (3.2.5)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    safely_block (0.3.0)
+      errbase (>= 0.1.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -315,6 +323,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   activeadmin_quill_editor
+  ahoy_matey
   autoprefixer-rails
   bitly
   bootsnap (>= 1.4.2)

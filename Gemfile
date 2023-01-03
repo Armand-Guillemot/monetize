@@ -63,3 +63,4 @@ gem 'activeadmin'
 gem 'activeadmin_quill_editor'
 gem 'dotenv-rails'
 gem 'bitly'
+gem "ahoy_matey"
