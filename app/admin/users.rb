@@ -62,6 +62,7 @@ ActiveAdmin.register User do
             status_tag((user.created_at.utc + 2.hours).strftime("%d/%m/%y %H:%M"))
           end
           row :confirmed
+          row :master_affiliate_url
         end
         attributes_table title: "" do
           row :master_affiliate do
