@@ -25,8 +25,22 @@ ActiveAdmin.register User do
     column "Date", :created_at, sortable: :created_at do |user|
       status_tag((user.created_at.utc + 2.hours).strftime("%d/%m/%y %H:%M"))
     end
-    column :step_1
-    column :step_2
+    column "Socials" do |user|
+      user.user_socials.count
+    end
+    column "Products" do |user|
+      user.user_products.map{|user_product| user_product.product.title}
+    end
+    column :master_affiliate do |user|
+      link_to(user.master_affiliate.pseudo, admin_user_path(user.master_affiliate)) if user.master_affiliate.present?
+    end
+    column :sub_affiliates do |user|
+      result_html = ""
+      if user.sub_affiliates.present?
+        user.sub_affiliates.each {|sub_affiliate| result_html += "#{link_to(sub_affiliate.pseudo, admin_user_path(sub_affiliate))}<br>"}
+      end
+      result_html.html_safe
+    end
     column :confirmed
   end
 
@@ -49,6 +63,11 @@ ActiveAdmin.register User do
           end
           row :confirmed
         end
+        attributes_table title: "" do
+          row :master_affiliate do
+            link_to(user.master_affiliate.pseudo, admin_user_path(user.master_affiliate)) if user.master_affiliate.present?
+          end
+        end
       end
       column do
         attributes_table title: "" do
@@ -61,6 +80,15 @@ ActiveAdmin.register User do
             status_tag((user.last_sign_in_at.utc + 2.hours).strftime("%d/%m/%y %H:%M"))
           end
           row :last_sign_in_ip
+        end
+        attributes_table title: "" do
+          row :sub_affiliates do
+            result_html = ""
+            if user.sub_affiliates.present?
+              user.sub_affiliates.each {|sub_affiliate| result_html += "#{link_to(sub_affiliate.pseudo, admin_user_path(sub_affiliate))}<br>"}
+            end
+            result_html.html_safe
+          end
         end
       end
     end
