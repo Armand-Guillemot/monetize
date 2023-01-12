@@ -20,10 +20,10 @@ class UserProduct < ApplicationRecord
 
       if !master_affiliate.has_user_product(self.product)
         UserProduct.create(user_id: master_affiliate.id, product_id: self.product.id, status: 0).link(10,10)
-
+        master_affiliate.reload
       elsif master_affiliate.has_user_product(self.product) && !master_affiliate.user_product(self.product).linked
         master_affiliate.user_product(self.product).link(10,10)
-
+        master_affiliate.reload
       end
       
       external_master_affiliate_id = master_affiliate.user_product(self.product).external_id
