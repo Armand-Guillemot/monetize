@@ -18,10 +18,10 @@ class UserProduct < ApplicationRecord
     if self.user.master_affiliate.present?
       master_affiliate = self.user.master_affiliate
 
-      if !master_affiliate.has_product(self.product)
+      if !master_affiliate.has_user_product(self.product)
         UserProduct.create(user_id: master_affiliate.id, product_id: self.product.id, status: 0).link(10,10)
 
-      elsif master_affiliate.has_product(self.product) && !master_affiliate.user_product(self.product).linked
+      elsif master_affiliate.has_user_product(self.product) && !master_affiliate.user_product(self.product).linked
         master_affiliate.user_product(self.product).link(10,10)
 
       end
